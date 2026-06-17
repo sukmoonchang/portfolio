@@ -69,25 +69,36 @@ const experience = [
     years: '2020—2026',
     role: 'Senior Product Design Manager',
     company: 'Weee!',
-    detail: 'Led product design across shopping, growth, loyalty, marketplace expansion, and operational experiences. Partnered closely with Product, Engineering, Data, Marketing, Merchandising, and Operations.'
+    bullets: [
+      'Led product design across Growth, Loyalty, Marketplace, Checkout, and AI initiatives',
+      'Built and scaled a product design team across the US and China',
+      'Drove marketplace expansion across 10+ ethnic communities',
+      'Led Loyalty Ecosystem Transformation and AI Shopping Assistant initiatives'
+    ]
   },
   {
-    years: '2017—2020',
-    role: 'Product Design Lead',
-    company: 'Consumer Marketplace',
-    detail: 'Led end-to-end design for acquisition, ecommerce, and service experiences. Built scalable design patterns and improved cross-functional product development.'
+    years: '2015—2019',
+    role: 'Product Designer',
+    company: 'Smule',
+    bullets: [
+      'Led end-to-end product design across iOS, Android, and Web, shaping experiences for a global community of music creators.',
+    ]
   },
   {
-    years: '2012—2017',
-    role: 'Senior Product Designer',
-    company: 'Digital Products & Services',
-    detail: 'Designed and launched mobile and web products across commerce, consumer technology, and digital service platforms.'
+    years: '2012—2015',
+    role: 'UX/UI Designer',
+    company: 'Fixya',
+    bullets: [
+      'Designed and maintained UI/UX experiences for web and mobile platforms while establishing visual design systems, brand identity, and marketing assets.',
+    ]
   },
   {
-    years: '2009—2012',
-    role: 'UX Designer',
-    company: 'Design & Innovation Studio',
-    detail: 'Built a foundation in research, interaction design, prototyping, and client-facing product design.'
+    years: '2013',
+    role: 'Instructor',
+    company: 'Graduate School of Design at Olivet University',
+    bullets: [
+      'Taught Advanced Interface Design and mentored graduate students through portfolio-focused design projects.',
+    ]
   },
 ]
 
@@ -845,9 +856,16 @@ function Resume() {
             <p className="mb-5 text-xs font-bold uppercase tracking-[.18em] text-black/45 dark:text-white/45">Experience</p>
             <h2 className="display text-6xl font-semibold lg:text-8xl">15+ years.<br/>Still curious.</h2>
           </div>
-          <button onClick={() => window.print()} className="no-print flex w-fit items-center gap-3 rounded-full bg-ink px-6 py-4 text-sm font-semibold text-white transition hover:scale-[1.02] dark:bg-white dark:text-ink">
-            <Download size={17}/> Download résumé
-          </button>
+        <a
+  href="/SukmoonChang-Principal-Product-Designer-Resume.pdf"
+  download
+  target="_blank"
+  rel="noopener noreferrer"
+  className="no-print flex w-fit items-center gap-3 rounded-full bg-ink px-6 py-4 text-white"
+>
+  <Download size={17} />
+  Download résumé
+</a>
         </div>
 
         <div className="divide-y divide-black/15 dark:divide-white/15">
@@ -858,7 +876,18 @@ function Resume() {
                 <h3 className="font-bold">{item.role}</h3>
                 <p className="mt-1 text-sm text-black/45 dark:text-white/45">{item.company}</p>
               </div>
-              <p className="leading-relaxed text-black/60 dark:text-white/55">{item.detail}</p>
+              {item.bullets ? (
+                <ul className="space-y-3 text-[18px] leading-relaxed text-black/60 dark:text-white/55">
+                  {item.bullets.map((bullet, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <span className="mt-[0.72em] block h-1.5 w-1.5 shrink-0 rounded-full bg-black/55 dark:bg-white/55" />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="leading-relaxed text-black/60 dark:text-white/55">{item.detail}</p>
+              )}
             </div>
           ))}
         </div>
@@ -910,7 +939,7 @@ function Contact() {
               <a href="mailto:hello@sukmoon.design" className="flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm">
                 <Mail size={16}/> Email
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm">
+              <a href="https://www.linkedin.com/in/sukmoonchang/" target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm">
                 <Linkedin size={16}/> LinkedIn
               </a>
             </div>
