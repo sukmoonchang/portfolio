@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import {
   ArrowDown, ArrowRight, ArrowUpRight, Check, Download,
   Linkedin, Mail, Menu, Moon, Plus, Send, Sun, X
@@ -115,13 +115,23 @@ function Nav({ dark, setDark, navigate }) {
   const [open, setOpen] = useState(false)
   const links = [['Work', '#work'], ['About', '#about'], ['Resume', '#resume'], ['Contact', '#contact']]
 
+  const scrollToSection = (href, behavior = 'smooth') => {
+    const el = document.querySelector(href)
+    if (el) {
+      el.scrollIntoView({ behavior, block: 'start' })
+    }
+  }
+
   const goHomeSection = (href) => {
     setOpen(false)
-    navigate('/')
-    setTimeout(() => {
-      const el = document.querySelector(href)
-      if (el) el.scrollIntoView({ behavior: 'smooth' })
-    }, 50)
+
+    if (window.location.pathname !== '/') {
+      navigate('/', { scrollTop: false })
+      setTimeout(() => scrollToSection(href, 'auto'), 80)
+      return
+    }
+
+    scrollToSection(href)
   }
 
   return (
@@ -142,7 +152,7 @@ function Nav({ dark, setDark, navigate }) {
             {dark ? <Sun size={16}/> : <Moon size={16}/>}
           </button>
 
-          <a href="mailto:hello@sukmoon.design" className="rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:scale-[1.03] dark:bg-white dark:text-ink">
+          <a href="mailto:sukmoon.chang@gmail.com" className="rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:scale-[1.03] dark:bg-white dark:text-ink">
             Let’s talk
           </a>
         </div>
@@ -171,7 +181,7 @@ function Hero() {
       <div className="mx-auto flex min-h-[calc(94vh-72px)] max-w-[1440px] flex-col justify-between px-5 pb-8 pt-14 lg:px-10 lg:pt-20">
         <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[.16em] reveal">
           <span className="h-2 w-2 rounded-full bg-[#32b879]"/>
-          <span>Available for design leadership opportunities</span>
+          <span>AVAILABLE TO BUILD PRODUCTS THAT DRIVE BUSINESS IMPACT</span>
         </div>
 
         <div className="py-16">
@@ -182,7 +192,7 @@ function Hero() {
 
           <div className="mt-10 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
             <p className="max-w-2xl text-xl leading-relaxed text-black/65 reveal delay-3 dark:text-white/65 lg:text-2xl">
-              Senior Product Design Manager shaping ecommerce, loyalty, marketplace, and operational experiences that create lasting value for customers and businesses.
+              Building products that create customer value and drive business growth.
             </p>
 
             <button
@@ -200,12 +210,12 @@ function Hero() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 border-t border-black/15 pt-5 text-sm dark:border-white/15 lg:grid-cols-4">
-          <span>15+ years experience</span>
-          <span>Product & design leadership</span>
-          <span className="hidden lg:block">San Francisco Bay Area</span>
-          <span className="text-right">Scroll to explore</span>
-        </div>
+        <div className="flex flex-wrap items-center gap-10 border-t border-black/15 pt-5 text-sm dark:border-white/15">
+		  <span>15+ Years Experience</span>
+		  <span>Marketplace · Ecommerce · AI</span>
+ 		 <span>San Francisco Bay Area</span>
+		  <span>Open to New Opportunities</span>
+</div>
       </div>
     </header>
   )
@@ -218,16 +228,16 @@ function Metrics() {
         <div className="mb-16 flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
           <p className="text-xs font-bold uppercase tracking-[.18em] text-white/50">Selected impact</p>
           <h2 className="max-w-3xl text-4xl font-semibold leading-[1.05] tracking-[-.045em] lg:text-6xl">
-            Design as a lever for clarity, trust, and operational scale.
+				Building products that drive customer value and business growth.
           </h2>
         </div>
 
         <div className="grid divide-y divide-white/15 border-y border-white/15 md:grid-cols-2 md:divide-x md:divide-y-0 lg:grid-cols-4">
           {[
-            ['2-way', 'Rewards / Cash architecture'],
-            ['0→1', 'Driver workflow design'],
-            ['Clearer', 'Wallet transparency'],
-            ['Faster', 'Driver decision making']
+				['15+', 'Years Experience'],
+  				['10+', 'Communities Expanded'],
+  				['Global', 'Product Teams'],
+ 				['Growth', 'Product Expertise']
           ].map(([n,l],i) => (
             <div key={n} className={`py-10 md:px-8 lg:py-14 ${i === 0 ? 'md:pl-0' : ''}`}>
               <div className="text-6xl font-semibold tracking-[-.06em] lg:text-7xl">{n}</div>
@@ -777,16 +787,19 @@ function Learning({ text }) {
   )
 }
 
+
 function About() {
   return (
     <section id="about" className="border-y border-black/10 bg-[#e8e4dc] py-24 dark:border-white/10 dark:bg-white/[.04] lg:py-36">
       <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
-        <div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
+        <div className="grid gap-12 lg:grid-cols-[.14fr_.42fr_1fr] lg:gap-8">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[.18em] text-black/45 dark:text-white/45">How I lead</p>
+            <p className="text-xs font-bold uppercase tracking-[.18em] text-black/45 dark:text-white/45">
+              How I lead
+            </p>
           </div>
 
-          <div>
+          <div className="lg:col-start-3">
             <h2 className="text-4xl font-semibold leading-[1.08] tracking-[-.045em] lg:text-7xl">
               I connect customer truth, product strategy, and team craft.
             </h2>
@@ -921,7 +934,7 @@ function Contact() {
     const data = new FormData(event.currentTarget)
     const subject = encodeURIComponent(`Portfolio inquiry from ${data.get('name')}`)
     const body = encodeURIComponent(`${data.get('message')}\n\nFrom: ${data.get('name')}\nEmail: ${data.get('email')}`)
-    window.location.href = `mailto:hello@sukmoon.design?subject=${subject}&body=${body}`
+    window.location.href = `mailto:sukmoon.chang@gmail.com?subject=${subject}&body=${body}`
     setSent(true)
   }
 
@@ -936,7 +949,7 @@ function Contact() {
               I’m interested in ambitious product challenges, leadership opportunities, and teams that care about customers and outcomes in equal measure.
             </p>
             <div className="mt-12 flex flex-wrap gap-3">
-              <a href="mailto:hello@sukmoon.design" className="flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm">
+              <a href="mailto:sukmoon.chang@gmail.com" className="flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm">
                 <Mail size={16}/> Email
               </a>
               <a href="https://www.linkedin.com/in/sukmoonchang/" target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm">
@@ -998,6 +1011,7 @@ function Footer({ navigate }) {
 export default function App() {
   const [dark, setDark] = useState(false)
   const [path, setPath] = useState(window.location.pathname)
+  const shouldScrollTopRef = useRef(true)
 
   const instantScrollTop = () => {
     const html = document.documentElement
@@ -1020,7 +1034,11 @@ export default function App() {
   }
 
   useLayoutEffect(() => {
-    instantScrollTop()
+    if (shouldScrollTopRef.current) {
+      instantScrollTop()
+    }
+
+    shouldScrollTopRef.current = true
   }, [path])
 
   useEffect(() => {
@@ -1031,8 +1049,8 @@ export default function App() {
     window.history.scrollRestoration = 'manual'
 
     const handlePopState = () => {
+      shouldScrollTopRef.current = true
       setPath(window.location.pathname)
-      requestAnimationFrame(() => instantScrollTop())
     }
 
     window.addEventListener('popstate', handlePopState)
@@ -1042,10 +1060,16 @@ export default function App() {
     }
   }, [])
 
-  const navigate = (to) => {
+  const navigate = (to, options = {}) => {
+    const { scrollTop = true } = options
+
     window.history.pushState({}, '', to)
+    shouldScrollTopRef.current = scrollTop
     setPath(to)
-    requestAnimationFrame(() => instantScrollTop())
+
+    if (scrollTop) {
+      requestAnimationFrame(() => instantScrollTop())
+    }
   }
 
   const currentCase = caseStudies.find(item => `/${item.id}` === path)
