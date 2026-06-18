@@ -28,7 +28,7 @@ const caseStudies = [
     year: '2026',
     metric: '2-way',
     metricLabel: 'wallet architecture',
-    color: '#63d2a1',
+    color: '#EACCFE',
     tags: ['Loyalty strategy', 'Wallet redesign', 'Behavioral nudges'],
     problem: 'Weee! Points combined purchase rewards, share incentives, review rewards, video rewards, and cash-purchased value into one balance. This made the system difficult for customers to understand and difficult for the business to manage sustainably.',
     insight: 'Not all points carry the same meaning. Customers needed to clearly distinguish earned rewards from cash-equivalent value, while the business needed a clearer structure for liability, expiration, and value communication.',
@@ -493,18 +493,28 @@ function LoyaltyCaseStudy({ item }) {
           How the new loyalty ecosystem came to life across the customer journey.
         </h2>
 
-        <div className="mt-14 space-y-10">
-          {[
-            [keyExperienceHero, 'Existing loyalty experience'],
-            [walletHomeImage, 'Wallet Home'],
-            [walletDetailsImage, 'Wallet Details'],
-            [expirationAwarenessImage, 'Expiration Awareness'],
-          ].map(([src, alt]) => (
-            <div key={alt} className="overflow-hidden rounded-[2rem] border border-black/10 bg-white dark:border-white/10 dark:bg-white/[.04]">
-              <img src={src} alt={alt} className="w-full" />
-            </div>
-          ))}
-        </div>
+       <div className="mt-14 space-y-10">
+
+  <img
+    src={keyExperienceHero}
+    alt="Existing loyalty experience"
+    className="w-full"
+  />
+
+  <div className="rounded-[2rem] overflow-hidden">
+    <img src={walletHomeImage} alt="Wallet Home" className="w-full" />
+  </div>
+
+  <div className="rounded-[2rem] overflow-hidden">
+    <img src={walletDetailsImage} alt="Wallet Details" className="w-full" />
+  </div>
+
+  <div className="rounded-[2rem] overflow-hidden">
+    <img src={expirationAwarenessImage} alt="Expiration Awareness" className="w-full" />
+  </div>
+
+</div>
+       
       </section>
 
       <BusinessImpact />
