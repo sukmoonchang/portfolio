@@ -856,9 +856,10 @@ function BusinessImpact() {
       <p className="mb-10 text-xs font-bold uppercase tracking-[.16em] text-black/40 dark:text-white/40">Business Impact</p>
       <div className="grid gap-4 md:grid-cols-3">
         {impacts.map((impact) => (
-          <div key={impact.title} className="rounded-3xl border border-black/10 bg-white p-7 text-[#001DAC] dark:border-white/10 dark:bg-white dark:text-[#001DAC]">
-            <h3 className="text-2xl font-semibold tracking-[-.03em]">{impact.title}</h3>
-            <ul className="mt-5 space-y-3 text-sm leading-relaxed text-[#001DAC]/80 lg:text-base">
+    <div key={impact.title} className="rounded-3xl border border-black/10 bg-white p-7">		<h3 className="text-2xl font-semibold tracking-[-.03em] text-[#AD3FF7]">
+ 		 {impact.title}
+		</h3>   
+		         <ul className="mt-5 space-y-3 text-sm leading-relaxed text-black lg:text-base">
               {impact.points.map((point) => (
                 <li key={point} className="flex gap-2">
                   <span aria-hidden="true">•</span>
