@@ -50,7 +50,7 @@ const caseStudies = [
     title: 'Failed Delivery Recovery Experience',
     subtitle: 'Helping drivers recover deliveries before they fail.',
     category: 'Operations',
-    year: '2022',
+    year: '2025',
     metric: '0→1',
     metricLabel: 'driver workflow',
     color: '#C6DC94',
