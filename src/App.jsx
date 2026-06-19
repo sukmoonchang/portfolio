@@ -17,6 +17,14 @@ import keyExperienceHero from './assets/Loyalty-key-experience-0.png'
 import walletHomeImage from './assets/Loyalty-key-experience-1.png'
 import walletDetailsImage from './assets/Loyalty-key-experience-2.png'
 import expirationAwarenessImage from './assets/Loyalty-key-experience-3.png'
+import failedDeliveryThumbnail from './assets/failed-delivery-recovery-thumbnail.png'
+import businessContextImage from './assets/failed-delivery-recovery-business-context.png'
+import problemStatementImage from './assets/failed-delivery-recovery-problem-statment.png'
+import designPrincipleImage from './assets/failed-delivery-design-principle.png'
+import failedDeliveryKeyExperience from './assets/failed-delivery-key-experience.png'
+import failedDeliveryOutcome from './assets/failed-delivery-recovery-outcome.png'
+import designFlowImage from './assets/failed-delivery-design-flow.png'
+
 
 const caseStudies = [
   {
@@ -39,19 +47,19 @@ const caseStudies = [
   {
     id: 'driver',
     index: '02',
-    title: 'Driver App',
-    subtitle: 'Designing real-time delivery workflows under fulfillment constraints.',
+    title: 'Failed Delivery Recovery Experience',
+    subtitle: 'Helping drivers recover deliveries before they fail.',
     category: 'Operations',
     year: '2022',
     metric: '0→1',
     metricLabel: 'driver workflow',
-    color: '#f4a261',
+    color: '#C6DC94',
     tags: ['Driver experience', 'Service design', 'Operational UX'],
-    problem: 'As Weee! expanded into on-demand restaurant delivery, drivers needed to make fast decisions across pickup, routing, timing, and order handoff.',
+    problem: 'When a delivery issue occurred, drivers were expected to determine the next step themselves. Some contacted customers multiple times, verified location accuracy, or waited for instructions, while others reported a failed delivery immediately.on-demand restaurant delivery, drivers needed to make fast decisions across pickup, routing, timing, and order handoff.',
     insight: 'Drivers do not need more information. They need the right information at the right moment, with clear next actions and fewer ambiguous states.',
     strategy: 'Design a task-focused mobile workflow that reduces decision friction, supports real-time coordination, and keeps drivers confident from offer acceptance to delivery completion.',
     solution: 'We created a streamlined driver experience covering offer review, pickup guidance, order status, delivery instructions, and exception handling for time-sensitive restaurant delivery.',
-    learning: 'Operational UX works best when complexity is structured into simple, sequential decisions.'
+    learning: 'The goal was not to create a better reporting tool. The goal was to create a recovery system that helped drivers succeed before failure occurred.'
   },
 ]
 
@@ -324,37 +332,16 @@ function CaseVisual({ type }) {
   }
 
   if (type === 'driver') {
-    return (
-      <div className="absolute inset-0 flex items-center justify-center p-8">
-        <div className="relative h-[86%] w-[58%] max-w-[320px] rounded-[2.5rem] bg-[#17151d] p-4 text-white shadow-2xl">
-          <div className="mx-auto mb-5 h-1.5 w-16 rounded-full bg-white/20"/>
-          <div className="rounded-[1.75rem] bg-white p-5 text-ink">
-            <div className="mb-5 flex items-center justify-between">
-              <div>
-                <div className="text-xs text-black/45">New offer</div>
-                <div className="text-2xl font-bold tracking-[-.04em]">Restaurant pickup</div>
-              </div>
-              <div className="rounded-full bg-[#f4a261] px-3 py-1 text-xs font-bold">12 min</div>
-            </div>
-
-            <div className="space-y-3">
-              {['Accept offer', 'Navigate to pickup', 'Confirm handoff'].map((label, i) => (
-                <div key={label} className="flex items-center gap-3 rounded-2xl bg-black/[.05] p-3">
-                  <div className="grid h-8 w-8 place-items-center rounded-full bg-black text-xs text-white">{i + 1}</div>
-                  <div className="h-2 flex-1 rounded bg-black/25"/>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-6 rounded-2xl bg-ink p-4 text-white">
-              <div className="text-xs text-white/50">Next action</div>
-              <div className="mt-1 font-semibold">Go to pickup location</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
+  return (
+    <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+      <img
+        src={failedDeliveryThumbnail}
+        alt="Failed Delivery Recovery Experience"
+        className="h-full w-full object-cover"
+      />
+    </div>
+  )
+}
 
   return null
 }
@@ -399,8 +386,7 @@ function CasePage({ item, navigate }) {
       </section>
 
       {item.id === 'loyalty' ? <LoyaltyCaseStudy item={item}/> : <DriverCaseStudy item={item}/>}
-      {item.id === 'driver' && <DriverUnavailableOverlay navigate={navigate} />}
-
+ 
       <section className="mx-auto max-w-[1200px] px-5 pb-24 lg:px-10">
         <button
           onClick={() => navigate('/')}
@@ -643,68 +629,169 @@ function DriverCaseStudy({ item }) {
     <div className="mx-auto max-w-[1200px] px-5 py-20 lg:px-10 lg:py-28">
       <CaseSection
         label="Executive Summary"
-        title="Designing a real-time driver workflow for on-demand delivery."
-        body="The Driver App helped translate operational complexity into a simple, step-by-step mobile experience for accepting offers, navigating pickup, managing delivery states, and handling exceptions."
+        title="Transforming failed delivery reporting into a guided recovery experience."
+        body="As Weee! scaled its last-mile delivery network, failed deliveries became a growing operational challenge. Drivers frequently encountered unavailable customers, incorrect addresses, restricted access, or difficulties locating destinations. I led the redesign of the failed delivery workflow, helping drivers resolve delivery issues before abandoning an order."
       />
 
-      <CaseSection
-        label="Business Context"
-        title="On-demand delivery introduced a faster, more operationally complex fulfillment model."
-        body="As Weee! expanded into restaurant delivery, drivers needed better tools to make decisions quickly under time, routing, pickup, and handoff constraints."
-      />
+      <section className="grid gap-6 border-b border-black/15 py-16 lg:grid-cols-[220px_1fr]">
+  <div>
+    <p className="text-xs font-bold uppercase tracking-[.16em] text-black/40">
+      Business Context
+    </p>
+  </div>
 
-      <CaseSection label="Problem Statement" title="Drivers needed clarity under pressure." body={item.problem}/>
-      <CaseSection label="Key Insights" title="The right next action mattered more than more information." body={item.insight}/>
-      <CaseSection label="Design Strategy" title="Structure the experience around sequential decisions." body={item.strategy}/>
+  <div>
+    <h2 className="max-w-4xl text-3xl font-semibold leading-[1.15] tracking-[-.035em] lg:text-6xl">
+      Failed deliveries were more than an operations problem.
+    </h2>
 
+    <p className="mt-6 max-w-3xl text-xl leading-relaxed text-black/60">
+      Weee!'s delivery ecosystem depends on a seamless connection between
+      customers, operations teams, and delivery drivers. As delivery volume
+      increased, failed deliveries became one of the most expensive operational
+      inefficiencies.
+    </p>
+
+    <img
+      src={businessContextImage}
+      alt="Failed Delivery Business Context"
+      className="mt-10 w-full rounded-[24px]"
+    />
+  </div>
+</section>
+		
+		<section className="grid gap-6 border-b border-black/15 py-16 lg:grid-cols-[220px_1fr]">
+  <div>
+    <p className="text-xs font-bold uppercase tracking-[.16em] text-black/40">
+      Problem Statement
+    </p>
+  </div>
+
+  <div>
+    <h2 className="max-w-4xl text-3xl font-semibold leading-[1.15] tracking-[-.035em] lg:text-6xl">
+      Drivers had no clear recovery process.
+    </h2>
+
+    <p className="mt-6 max-w-3xl text-xl leading-relaxed text-black/60">
+      {item.problem}
+    </p>
+
+    <img
+      src={problemStatementImage}
+      alt="Failed Delivery Problem Statement"
+      className="mt-10 w-full rounded-[24px]"
+    />
+  </div>
+</section>
+
+		<section className="grid gap-6 border-b border-black/15 py-16 lg:grid-cols-[220px_1fr]">
+  <div>
+    <p className="text-xs font-bold uppercase tracking-[.16em] text-black/40">
+      RESEARCH & INSIGHTS
+    </p>
+  </div>
+
+  <div>
+    <h2 className="max-w-4xl text-3xl font-semibold leading-[1.15] tracking-[-.035em] lg:text-6xl">
+      The issue was not driver behavior. It was the absence of a recovery framework.
+    </h2>
+
+    <div className="mt-12 rounded-[40px] bg-[#7CA71C] p-10 lg:p-16">
+      <p className="text-xs font-bold uppercase tracking-[.16em] text-white/50">
+        KEY INSIGHT
+      </p>
+
+      <h3 className="mt-8 text-4xl font-semibold leading-[1.08] tracking-[-.015em] text-white lg:text-5xl">
+        Drivers were not intentionally causing delivery failures. They simply lacked confidence and guidance when unexpected situations occurred.
+      </h3>
+    </div>
+  </div>
+</section>      
+      
+		<section className="grid gap-6 border-b border-black/15 py-16 lg:grid-cols-[220px_1fr]">
+  <div>
+    <p className="text-xs font-bold uppercase tracking-[.16em] text-black/40">
+      DESIGN PRINCIPLES
+    </p>
+  </div>
+
+  <div>
+    <h2 className="max-w-4xl text-3xl font-semibold leading-[1.15] tracking-[-.035em] lg:text-6xl">
+      Guide drivers toward recovery before escalation.
+    </h2>
+
+    <p className="mt-6 max-w-3xl text-xl leading-relaxed text-black/60">
+      {item.strategy}
+    </p>
+
+    <img
+      src={designPrincipleImage}
+      alt="Failed Delivery Design Principles"
+      className="mt-10 w-full rounded-[24px]"
+    />
+  </div>
+</section>
+		
       <section className="py-24">
         <p className="mb-6 text-xs font-bold uppercase tracking-[.16em] text-black/40 dark:text-white/40">Key Experiences</p>
-        <h2 className="max-w-4xl text-4xl font-semibold leading-[1.1] tracking-[-.045em] lg:text-6xl">
-          A task-focused mobile workflow from offer acceptance to delivery completion.
+       
+       <h2 className="text-4xl font-semibold leading-[1.1] tracking-[-.045em] lg:text-6xl">
+          A guided failed delivery recovery flow.
         </h2>
+        <p className="mt-6 max-w-4xl text-xl leading-relaxed text-black/60">
+  I redesigned the experience around a structured recovery journey that
+  verifies the package, identifies the issue, confirms location, guides
+  customer contact, recommends next steps, and requires evidence before
+  failure submission.
+</p>
+<div className="mt-12 overflow-hidden rounded-[2rem]">
+  <img
+    src={failedDeliveryKeyExperience}
+    alt="Failed Delivery Recovery Flow"
+    className="w-full"
+  />
+</div>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-2">
-          {['Offer Review', 'Pickup Guidance', 'Delivery Instructions', 'Exception Handling'].map((t) => (
-            <div key={t} className="rounded-[2rem] border border-black/10 bg-white p-7 dark:border-white/10 dark:bg-white/[.04]">
-              <div className="relative min-h-[300px] overflow-hidden rounded-[1.5rem]" style={{backgroundColor:item.color}}>
-                <CaseVisual type="driver"/>
-              </div>
-              <h3 className="mt-8 text-2xl font-semibold tracking-[-.03em]">{t}</h3>
-              <p className="mt-3 text-black/55 dark:text-white/50">
-                Clear, mobile-first guidance designed to reduce ambiguity and support fast driver decisions.
-              </p>
-            </div>
-          ))}
-        </div>
+<div className="mt-12 overflow-hidden rounded-[2rem]">
+  <img
+    src={designFlowImage}
+    alt="Failed Delivery Design Flow"
+    className="w-full"
+  />
+</div>
+        
       </section>
+
+<section className="py-24">
+  <p className="mb-6 text-xs font-bold uppercase tracking-[.16em] text-black/40 dark:text-white/40">
+    OUTCOME
+  </p>
+
+  
+  <h2 className="text-4xl font-semibold leading-[1.1] tracking-[-.045em] lg:text-6xl">
+    Measurable impact across drivers, customers, and operations.
+  </h2>
+
+  <p className="mt-6 max-w-4xl text-xl leading-relaxed text-black/60">
+    The guided recovery workflow improved consistency, reduced avoidable failed
+    deliveries, and created greater visibility into delivery exceptions across
+    the network.
+  </p>
+
+  <div className="mt-12 overflow-hidden rounded-[2rem]">
+    <img
+      src={failedDeliveryOutcome}
+      alt="Failed Delivery Recovery Outcome"
+      className="w-full"
+    />
+  </div>
+</section>
 
       <Learning text={item.learning}/>
     </div>
   )
 }
 
-function DriverUnavailableOverlay({ navigate }) {
-  return (
-    <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/80 px-5">
-      <div className="w-full max-w-[760px] rounded-[3rem] bg-[#f7f4ec] p-10 text-center text-ink shadow-2xl lg:p-16">
-        <h2 className="text-3xl font-semibold leading-tight tracking-[-.04em] lg:text-5xl">
-          I'm sorry.
-          <br />
-          This case study is still being written.
-          <br />
-          I will have it ready as soon as possible.
-        </h2>
-
-        <button
-          onClick={() => navigate('/')}
-          className="mx-auto mt-12 flex items-center gap-2 rounded-full border border-black/20 px-6 py-3 text-sm font-semibold transition hover:bg-ink hover:text-white"
-        >
-          Back to all work <ArrowRight size={16}/>
-        </button>
-      </div>
-    </div>
-  )
-}
 
 function CaseIntro() {
   return (
