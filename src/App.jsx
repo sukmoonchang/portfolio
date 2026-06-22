@@ -18,12 +18,20 @@ import walletHomeImage from './assets/Loyalty-key-experience-1.png'
 import walletDetailsImage from './assets/Loyalty-key-experience-2.png'
 import expirationAwarenessImage from './assets/Loyalty-key-experience-3.png'
 import failedDeliveryThumbnail from './assets/failed-delivery-recovery-thumbnail.png'
+import firstTimeUserHomeWalletImage from './assets/first-time-user-home-wallet.png'
 import businessContextImage from './assets/failed-delivery-recovery-business-context.png'
 import problemStatementImage from './assets/failed-delivery-recovery-problem-statment.png'
 import designPrincipleImage from './assets/failed-delivery-design-principle.png'
 import failedDeliveryKeyExperience from './assets/failed-delivery-key-experience.png'
 import failedDeliveryOutcome from './assets/failed-delivery-recovery-outcome.png'
 import designFlowImage from './assets/failed-delivery-design-flow.png'
+import newUserHomeStoreSelectorImage from './assets/New-user-home-1-store-selector.png'
+import newUserHomeValuePropositionsImage from './assets/New-user-home-value-propositions.png'
+import newUserHomeCartBuilderImage from './assets/New-user-home-cart-builder.png'
+import newUserHomeProductExplorationImage from './assets/New-user-home-product-exploration.png'
+import newUserHomeSocialProofImage from './assets/New-user-home-social-proof.png'
+import newUserHomeRecommendationsImage from './assets/New-user-home-recommendations.png'
+import newUserHomeGuidedDiscoveryImage from './assets/New-user-home-guided-discovery.png'
 
 
 const caseStudies = [
@@ -60,6 +68,23 @@ const caseStudies = [
     strategy: 'Design a task-focused mobile workflow that reduces decision friction, supports real-time coordination, and keeps drivers confident from offer acceptance to delivery completion.',
     solution: 'We created a streamlined driver experience covering offer review, pickup guidance, order status, delivery instructions, and exception handling for time-sensitive restaurant delivery.',
     learning: 'The goal was not to create a better reporting tool. The goal was to create a recovery system that helped drivers succeed before failure occurred.'
+  },
+  {
+    id: 'new-user-homepage',
+    index: '03',
+    title: 'First Cart Experience for New Shoppers',
+    subtitle: 'Helping first-time shoppers find the right store, understand the value, and build their first cart.',
+    category: 'Growth',
+    year: '2025',
+    metric: 'First cart',
+    metricLabel: 'new-user journey',
+    color: '#DDEBFF',
+    tags: ['Homepage optimization', 'Store discovery', 'First-cart growth'],
+    problem: 'New visitors were landing in an experience that assumed they already understood Weee!, knew which ethnic store they wanted, and had a clear idea of what to buy.',
+    insight: 'New users do not just need products. They need orientation, relevance, and confidence before they can start building their first cart.',
+    strategy: 'Turn the homepage from a generic merchandising page into a guided first-shopping experience that helps users choose the right store, understand the value of Weee!, and build shopping momentum.',
+    solution: 'We introduced a prominent first-time store selector, marketplace-wide recommendations before store selection, clearer value propositions, stronger new-user perks, cart-building modules, search-based exploration, and social proof from real customer behavior.',
+    learning: 'Personalization does not always mean making an immediate assumption. For new visitors, relevance often starts with clear choices, reduced uncertainty, and visible trust signals.'
   },
 ]
 
@@ -100,14 +125,31 @@ const experience = [
       'Designed and maintained UI/UX experiences for web and mobile platforms while establishing visual design systems, brand identity, and marketing assets.',
     ]
   },
+  
   {
-    years: '2013',
-    role: 'Instructor',
-    company: 'Graduate School of Design at Olivet University',
-    bullets: [
-      'Taught Advanced Interface Design and mentored graduate students through portfolio-focused design projects.',
-    ]
-  },
+  years: '2013',
+  role: 'Instructor',
+  company: 'Olivet University',
+  bullets: [
+    'Taught Advanced Interface Design and mentored graduate students through portfolio-focused design projects.',
+  ]
+},
+{
+  years: '2007—2008',
+  role: 'Design Manager',
+  company: 'Artirus Design',
+  bullets: [
+    'Led branding and packaging design projects, guided designers through creative direction and execution, and managed key client work including projects for the Korea Tourism Organization.',
+  ]
+},
+{
+  years: '2004—2007',
+  role: 'Sr. Graphic Designer',
+  company: 'Crown Confectionery',
+  bullets: [
+    'Led web, branding, packaging, and marketing design projects for the Crown Bakery franchise brand, including the development of brand stories, characters, and sub-brands.',
+  ]
+},
 ]
 
 function Logo() {
@@ -255,7 +297,7 @@ function Metrics() {
         </div>
 
         <p className="mt-6 text-xs text-white/35">
-          Portfolio outcomes are summarized to protect company-sensitive details.
+          Selected results are summarized to protect proprietary business information while accurately reflecting impact.
         </p>
       </div>
     </section>
@@ -343,6 +385,18 @@ function CaseVisual({ type }) {
   )
 }
 
+  if (type === 'new-user-homepage') {
+    return (
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+        <img
+          src={firstTimeUserHomeWalletImage}
+          alt="New User Homepage Optimization"
+          className="h-full w-full object-cover"
+        />
+      </div>
+    )
+  }
+
   return null
 }
 
@@ -378,14 +432,20 @@ function CasePage({ item, navigate }) {
               <p className="mt-3 text-lg font-semibold">
                 {item.id === 'loyalty'
                   ? 'Wallet · Rewards · Checkout · Account'
-                  : 'Driver App · Pickup · Delivery · Exceptions'}
+                  : item.id === 'new-user-homepage'
+                    ? 'Homepage · Store Discovery · First Cart · Conversion'
+                    : 'Driver App · Pickup · Delivery · Exceptions'}
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {item.id === 'loyalty' ? <LoyaltyCaseStudy item={item}/> : <DriverCaseStudy item={item}/>}
+      {item.id === 'loyalty'
+        ? <LoyaltyCaseStudy item={item}/>
+        : item.id === 'new-user-homepage'
+          ? <NewUserHomepageCaseStudy item={item}/>
+          : <DriverCaseStudy item={item}/>}
  
       <section className="mx-auto max-w-[1200px] px-5 pb-24 lg:px-10">
         <button
@@ -792,6 +852,183 @@ function DriverCaseStudy({ item }) {
   )
 }
 
+
+
+function NewUserHomepageCaseStudy({ item }) {
+  const challenges = [
+    ['01', 'The default store experience could create a trust gap', 'When Weee! did not have enough information about a new visitor, the site often showed the Chinese store by default. For non-Chinese shoppers, this made the experience feel less relevant and less personal.'],
+    ['02', 'The breadth of ethnic stores was not immediately visible', 'Although Weee! had a rich marketplace of 14+ ethnic grocery stores, new users did not easily recognize that variety or understand that Weee! had products tailored to their cultural shopping needs.'],
+    ['03', 'The value proposition was not communicated fast enough', 'The homepage needed to quickly explain ethnic grocery selection, freshness, delivery convenience, trusted community, and special offers before asking users to shop.'],
+    ['04', 'New-user perks were not visible enough', 'Special benefits for new shoppers were not always surfaced at the right moment, reducing the impact of marketing efforts designed to improve conversion.'],
+    ['05', 'New users needed help starting their first cart', 'Many first-time shoppers arrived without a clear shopping plan. They needed inspiration, social proof, and low-friction entry points to begin adding items.'],
+  ]
+
+  const strategicShifts = [
+    ['From default assumption to user choice', 'Instead of pushing new organic users into one default ethnic store, the experience encouraged them to choose the store that best matched their needs.'],
+    ['From hidden navigation to visible discovery', 'We introduced a temporary store selector module directly below the hero area for first-time users, making store discovery more visible without adding long-term clutter.'],
+    ['From browsing products to building confidence', 'The homepage introduced clearer value propositions, new-user perks, social proof, and cart-building modules to help first-time shoppers understand the service and take action.'],
+  ]
+
+  const solutions = [
+    ['01', 'Store selector for first-time discovery', 'A more prominent store selector helped users quickly understand that Weee! was a marketplace with multiple culturally relevant shopping experiences.'],
+    ['02', 'Clearer value propositions & Stronger visibility for new-user perks', 'A new value proposition section communicated selection, freshness, delivery convenience, trusted shopping, and community-driven discovery. New-user benefits were surfaced more clearly within the homepage journey, connecting marketing incentives directly to shopping behavior.'],
+    ['03', 'Cart builder for first-time shoppers', 'Modules like Build your first cart, Trending store favorites, New shopper favorites, and Top repurchased items helped reduce decision friction.'],
+    ['04', 'Marketplace-wide recommendations before store selection', 'Before a user selected a store, recommendations stayed broad and inclusive instead of defaulting too early to a single ethnic store.'],
+    ['05', 'Social proof through real customer data', 'Modules using real shopping behavior and customer reviews helped first-time users feel safer and more confident.'],
+    ['06', 'Product exploration based on search intent', 'Related and similar product recommendations turned search into a broader discovery path instead of a single-item lookup.'],
+    ['07', 'Turning promotions into guided discovery', 'Instead of showing promotions as a flat product grid, we grouped hot deals, weekly picks, local restaurant deals, and bakery items into themed discovery moments. This helped new users understand the breadth of Weee!’s marketplace while creating more low-friction opportunities to add items to cart.'],
+  ]
+
+  const principles = [
+    'Make relevance visible immediately',
+    'Do not over-personalize without enough data',
+    'Help users start, not just browse',
+    'Build trust before asking for conversion',
+  ]
+
+  return (
+    <div className="mx-auto max-w-[1200px] px-5 py-20 lg:px-10 lg:py-28">
+      <CaseSection
+        label="Overview"
+        title="Helping new visitors recognize that Weee! was built for their cultural shopping needs."
+        body="Weee! had grown into a multi-ethnic grocery marketplace with more than 14 ethnic grocery stores, including Chinese, Korean, Japanese, Vietnamese, Filipino, Thai, Indian, and more. However, the new-user homepage did not fully reflect that diversity, especially when the system lacked enough data to personalize the first visit."
+      />
+
+      <CaseSection
+        label="The Challenge"
+        title="New users were landing in an experience that assumed too much."
+        body="The existing homepage was optimized around returning-user behavior. It assumed that shoppers already understood Weee!, knew which ethnic store they wanted, and had a clear idea of what to buy. But many first-time visitors arrived from organic search, paid marketing, shared links, or product discovery flows with limited context."
+      />
+
+      <section className="grid gap-6 border-b border-black/15 py-16 dark:border-white/15 lg:grid-cols-[220px_1fr]">
+        <div>
+          <p className="text-xs font-bold uppercase tracking-[.16em] text-black/40 dark:text-white/40">Problem Areas</p>
+        </div>
+        <div>
+          <h2 className="max-w-4xl text-3xl font-semibold leading-[1.15] tracking-[-.035em] lg:text-6xl">
+            Five friction points made the first visit feel less relevant and less actionable.
+          </h2>
+
+          <div className="mt-12 space-y-4">
+            {challenges.map(([number, title, description]) => (
+              <div key={title} className="grid gap-5 rounded-[2rem] border border-black/10 bg-white p-7 dark:border-white/10 dark:bg-white/[.04] md:grid-cols-[80px_1fr]">
+                <span className="font-mono text-sm text-black/35 dark:text-white/35">{number}</span>
+                <div>
+                  <h3 className="text-2xl font-semibold tracking-[-.035em]">{title}</h3>
+                  <p className="mt-3 max-w-3xl leading-relaxed text-black/60 dark:text-white/55">{description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="grid gap-6 border-b border-black/15 py-16 dark:border-white/15 lg:grid-cols-[220px_1fr]">
+        <div>
+          <p className="text-xs font-bold uppercase tracking-[.16em] text-black/40 dark:text-white/40">Key Insight</p>
+        </div>
+        <div>
+          <div className="rounded-[40px] bg-[#1F59AD] text-white lg:p-16">
+            <p className="text-xs font-bold uppercase tracking-[.16em] text-white/40">Insight</p>
+            <h2 className="mt-8 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-[-.045em] lg:text-6xl">
+              New users do not just need products. They need orientation, relevance, and confidence.
+            </h2>
+            <p className="mt-8 max-w-3xl text-xl leading-relaxed text-white/60">
+              For first-time visitors, the homepage needed to answer: Is this store for me? What can I buy here? Why should I trust this service? What should I add to my cart first?
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="grid gap-6 border-b border-black/15 py-16 dark:border-white/15 lg:grid-cols-[220px_1fr]">
+        <div>
+          <p className="text-xs font-bold uppercase tracking-[.16em] text-black/40 dark:text-white/40">Design Strategy</p>
+        </div>
+        <div>
+          <h2 className="max-w-4xl text-3xl font-semibold leading-[1.15] tracking-[-.035em] lg:text-6xl">
+            Turn a generic merchandising page into a guided first-shopping experience.
+          </h2>
+
+          <div className="mt-12 grid gap-4 md:grid-cols-3">
+            {strategicShifts.map(([title, description]) => (
+              <div key={title} className="rounded-3xl bg-[#f7f4ec] p-7 dark:bg-white/[.04]">
+                <h3 className="text-2xl font-semibold tracking-[-.03em]">{title}</h3>
+                <p className="mt-4 leading-relaxed text-black/55 dark:text-white/50">{description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24">
+        <p className="mb-6 text-xs font-bold uppercase tracking-[.16em] text-black/40 dark:text-white/40">Solution</p>
+        <h2 className="max-w-4xl text-4xl font-semibold leading-[1.1] tracking-[-.045em] lg:text-6xl">
+          A homepage system that made store choice, value, trust, and first-cart creation easier.
+        </h2>
+
+        <div className="mt-14 space-y-5">
+          {solutions.map(([number, title, description]) => (
+            <div key={title} className="grid gap-5 rounded-[2rem] border border-black/10 bg-white p-7 dark:border-white/10 dark:bg-white/[.04] md:grid-cols-[80px_1fr]">
+              <span className="font-mono text-sm text-black/35 dark:text-white/35">{number}</span>
+              <div>
+                <h3 className="text-2xl font-semibold tracking-[-.035em]">{title}</h3>
+                <p className="mt-3 max-w-3xl leading-relaxed text-black/60 dark:text-white/55">{description}</p>
+                <div className="mt-8 overflow-hidden rounded-2xl bg-[#f7f4ec] dark:bg-white/[.04]">
+                  <img
+src={
+  number === '02'
+    ? newUserHomeValuePropositionsImage
+    : number === '03'
+      ? newUserHomeCartBuilderImage
+      : number === '04'
+        ? newUserHomeRecommendationsImage
+        : number === '05'
+          ? newUserHomeSocialProofImage
+          : number === '06'
+            ? newUserHomeProductExplorationImage
+            : number === '07'
+              ? newUserHomeGuidedDiscoveryImage
+              : newUserHomeStoreSelectorImage
+}
+                    alt={`${title} visual`}
+                    className="w-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-y border-black/15 py-20 dark:border-white/15">
+        <p className="mb-10 text-xs font-bold uppercase tracking-[.16em] text-black/40 dark:text-white/40">Experience Principles</p>
+        <div className="grid gap-4 md:grid-cols-2">
+          {principles.map((principle, index) => (
+            <div key={principle} className="rounded-3xl border border-black/10 bg-white p-7 dark:border-white/10 dark:bg-white/[.04]">
+              <span className="font-mono text-xs text-black/35 dark:text-white/35">0{index + 1}</span>
+              <h3 className="mt-8 text-2xl font-semibold tracking-[-.03em]">{principle}</h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-24">
+        <p className="mb-6 text-xs font-bold uppercase tracking-[.16em] text-black/40 dark:text-white/40">Results</p>
+        <h2 className="max-w-4xl text-4xl font-semibold leading-[1.1] tracking-[-.045em] lg:text-6xl">
+          The homepage became a guided entry point for first-time shoppers.
+        </h2>
+        <p className="mt-6 max-w-4xl text-xl leading-relaxed text-black/60 dark:text-white/55">
+          The redesigned experience was designed to improve new-user add-to-cart rate, first-purchase conversion, store discovery, product exploration, engagement with new-user perks, and trust in Weee!’s marketplace experience.
+        </p>
+        <p className="mt-6 max-w-4xl text-xl leading-relaxed text-black/60 dark:text-white/55">
+          The biggest impact was not simply adding more modules to the homepage. It was changing the role of the homepage from a generic storefront into a guided experience that helped users choose the right store, understand the value of Weee!, and start building their first cart with confidence.
+        </p>
+      </section>
+
+      <Learning text={item.learning}/>
+    </div>
+  )
+}
 
 function CaseIntro() {
   return (
