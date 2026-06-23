@@ -162,7 +162,7 @@ const allCaseStudies = [...caseStudies, ...smallCaseStudies]
 const expertise = [
   ['01', 'Product Strategy', 'Turning customer and market insight into focused product bets, roadmaps, and measurable outcomes.'],
   ['02', 'UX Design', 'Creating coherent, accessible experiences across complex customer journeys and service ecosystems.'],
-  ['03', 'Design Leadership', 'Building high-trust teams, raising the quality bar, and connecting craft to company strategy.'],
+  ['03', 'Design Direction', 'Setting clear design principles, raising the quality bar, and helping teams make better product decisions.'],
   ['04', 'Experimentation & Growth', 'Using behavioral insight and rigorous testing to unlock acquisition, conversion, and retention.'],
   ['05', 'Marketplace Experience', 'Designing customer, operator, and fulfillment experiences across complex marketplace systems.'],
   ['06', 'Ecommerce Experience', 'Optimizing discovery, basket building, checkout, fulfillment, loyalty, and post-purchase.'],
@@ -174,10 +174,10 @@ const experience = [
     role: 'Senior Product Design Manager',
     company: 'Weee!',
     bullets: [
-      'Led product design across Growth, Loyalty, Marketplace, Checkout, and AI initiatives',
-      'Built and scaled a product design team across the US and China',
-      'Drove marketplace expansion across 10+ ethnic communities',
-      'Led Loyalty Ecosystem Transformation and AI Shopping Assistant initiatives'
+      'Led end-to-end product design across Growth, Loyalty, Marketplace, Checkout, and AI initiatives.',
+      'Translated ambiguous business goals into clear customer journeys, product flows, and measurable experiments.',
+      'Designed key initiatives including Loyalty Ecosystem Transformation, AI Shopping Assistant, and checkout/post-purchase improvements.',
+      'Supported marketplace expansion across 10+ ethnic communities through localized shopping and discovery experiences.'
     ]
   },
   {
@@ -185,7 +185,7 @@ const experience = [
     role: 'Product Designer',
     company: 'Smule',
     bullets: [
-      'Led end-to-end product design across iOS, Android, and Web, shaping experiences for a global community of music creators.',
+      'Led end-to-end product design across iOS, Android, and Web, shaping creation, engagement, and community experiences for a global music creator audience.',
     ]
   },
   {
@@ -193,7 +193,7 @@ const experience = [
     role: 'UX/UI Designer',
     company: 'Fixya',
     bullets: [
-      'Designed and maintained UI/UX experiences for web and mobile platforms while establishing visual design systems, brand identity, and marketing assets.',
+      'Designed web and mobile experiences while establishing UI systems, brand identity, and marketing assets for a consumer support platform.',
     ]
   },
   
@@ -210,7 +210,7 @@ const experience = [
   role: 'Design Manager',
   company: 'Artirus Design',
   bullets: [
-    'Led branding and packaging design projects, guided designers through creative direction and execution, and managed key client work including projects for the Korea Tourism Organization.',
+    'Led branding and packaging design projects, guided designers through creative direction, and managed client work including projects for the Korea Tourism Organization.',
   ]
 },
 {
@@ -218,12 +218,18 @@ const experience = [
   role: 'Sr. Graphic Designer',
   company: 'Crown Confectionery',
   bullets: [
-    'Led web, branding, packaging, and marketing design projects for the Crown Bakery franchise brand, including the development of brand stories, characters, and sub-brands.',
+    'Led web, branding, packaging, and marketing design projects for the Crown Bakery franchise, including brand stories, characters, and sub-brand development.',
   ]
 },
 ]
 
 const designProjects = [
+    {
+    title: 'Weee! logistic Branding',
+    company: 'Weee!',
+    image: '/design-projects/weee-logistic-branding-2020.png',
+    thumbnail: '/design-projects/weee-logistic-branding-2020.png',
+  },
   {
     title: 'Weee! Company Branding',
     company: 'Weee!',
@@ -242,12 +248,7 @@ const designProjects = [
     image: '/design-projects/fixya-branding-2012.png',
     thumbnail: '/design-projects/fixya-branding-2012.png',
   },
-  {
-    title: 'Weee! logistic Branding',
-    company: 'Weee!',
-    image: '/design-projects/weee-logistic-branding-2020.png',
-    thumbnail: '/design-projects/weee-logistic-branding-2020.png',
-  },
+
   {
     title: 'Korea Scout Association Brand Identity',
     company: 'Korea Scout Association',
@@ -398,7 +399,7 @@ function Hero() {
 
         <div className="py-16">
           <h1 className="display max-w-[1250px] text-[clamp(4.2rem,11vw,10.5rem)] font-semibold">
-            <span className="block reveal delay-1">Designing systems</span>
+            <span className="block reveal delay-1">Designing products</span>
             <span className="block text-cobalt reveal delay-2">that scale trust.</span>
           </h1>
 
@@ -1475,21 +1476,21 @@ function About() {
         <div className="grid gap-12 lg:grid-cols-[.14fr_.42fr_1fr] lg:gap-8">
           <div>
             <p className="text-xs font-bold uppercase tracking-[.18em] text-black/45 dark:text-white/45">
-              How I lead
+              HOW I WORK
             </p>
           </div>
 
           <div className="lg:col-start-3">
             <h2 className="text-4xl font-semibold leading-[1.08] tracking-[-.045em] lg:text-7xl">
-              I connect customer truth, product strategy, and team craft.
+              I turn customer insight into product strategy, clear experiences, and measurable impact.
             </h2>
 
             <div className="mt-10 grid gap-8 text-lg leading-relaxed text-black/60 dark:text-white/60 md:grid-cols-2">
               <p>
-                For more than 15 years, I’ve led teams through ambiguous, high-stakes product challenges. My role is to create clarity: a shared understanding of the customer, the business opportunity, and what excellent execution requires.
+                For more than 15 years, I’ve worked across complex product, growth, and commerce challenges — translating ambiguous business goals into clear customer experiences and measurable outcomes.
               </p>
               <p>
-                I build environments where designers operate as strategic partners. We work closely with product, engineering, data, research, marketing, and operations to turn insight into outcomes, not just artifacts.
+                I partner closely with product, engineering, data, research, marketing, and operations to turn insight into focused decisions, useful systems, and high-quality execution.
               </p>
             </div>
           </div>
@@ -1524,9 +1525,9 @@ function Process() {
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {[
             ['Frame the right problem', 'Align on the customer behavior, business constraint, and decision we need to influence before exploring solutions.'],
-            ['Make strategy tangible', 'Use prototypes, narratives, and clear principles to turn abstract direction into something teams can debate and build.'],
+            ['Make strategy tangible', 'Use prototypes, narratives, and clear principles to turn abstract direction into something teams can align on and build.'],
             ['Learn at the speed of risk', 'Match research and experimentation to uncertainty. Test the most consequential assumptions first.'],
-            ['Scale the learning', 'Build systems, rituals, and shared language so each launch improves the organization, not just the product.']
+            ['Scale the learning', 'Build systems, operating habits, and shared language so each launch improves the organization, not just the product.']
           ].map(([t,d],i) => (
             <div key={t} className="rounded-3xl border border-black/10 bg-white p-8 dark:border-white/10 dark:bg-white/[.04]">
               <span className="font-mono text-xs text-black/35 dark:text-white/35">0{i+1}</span>
@@ -1550,7 +1551,7 @@ function Resume() {
             <h2 className="display text-6xl font-semibold lg:text-8xl">15+ years.<br/>Still curious.</h2>
           </div>
         <a
-  href="/SukmoonChang-Principal-Product-Designer-Resume.pdf"
+  href="/SukmoonChang-Product-Design-Lead-Resume.pdf"
   download
   target="_blank"
   rel="noopener noreferrer"
@@ -1593,13 +1594,13 @@ function Testimonials() {
   return (
     <section className="bg-sun py-24 text-ink lg:py-32">
       <div className="mx-auto max-w-[1200px] px-5 text-center lg:px-10">
-        <p className="mb-10 text-xs font-bold uppercase tracking-[.18em]">Design leadership</p>
+        <p className="mb-10 text-xs font-bold uppercase tracking-[.18em]">DESIGN PHILOSOPHY</p>
         <blockquote className="text-3xl font-semibold leading-[1.15] tracking-[-.04em] lg:text-6xl">
-          “I lead design by creating clarity: for customers, for teams, and for the business decisions behind the product.”
+          "I create clarity for customers, teams, and the business behind the product."
         </blockquote>
         <div className="mt-10 text-sm">
           <b>Sukmoon Chang</b><br/>
-          <span className="text-black/50">Senior Product Design Manager</span>
+          <span className="text-black/50">Senior Product Designer / Product Design Lead</span>
         </div>
       </div>
     </section>
