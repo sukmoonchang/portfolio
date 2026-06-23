@@ -88,6 +88,77 @@ const caseStudies = [
   },
 ]
 
+const smallCaseStudies = [
+  {
+    id: 'delivery-fee-updates',
+    index: '04',
+    title: 'Delivery fee Updates',
+    subtitle: 'Clarifying delivery-fee changes and turning a policy update into a customer-friendly experience.',
+    category: 'Ecommerce',
+    year: '2025',
+    color: '#F4F1E8',
+    tags: ['Fee transparency', 'Rewards', 'Customer messaging'],
+    thumbnail: '/case-study-entrances/delivery-fee-updates.png',
+    detailImage: '/case-study-entrances/Delivery-fee-review.png',
+    scope: 'Delivery Fee · Rewards · Customer Messaging',
+    overviewTitle: 'Turning a delivery-fee update into a clearer customer experience.',
+    overview: 'As delivery economics changed, customers needed to understand what was changing, why it mattered, and how they could still unlock value through the shopping journey.',
+    challengeTitle: 'A fee update could easily feel like a loss of value.',
+    problem: 'Delivery-fee changes can create confusion and frustration when they are introduced without enough context. The experience needed to explain the update clearly while keeping customers focused on available benefits and next actions.',
+    strategyTitle: 'Make the policy understandable, visible, and actionable.',
+    strategy: 'I framed the experience around clarity first: explain the change, surface the customer benefit, and connect the update to relevant reward or shopping actions instead of hiding the message inside dense account or checkout surfaces.',
+    solution: 'The design introduced customer-friendly messaging, clearer visual hierarchy, and contextual entry points that helped customers understand the update and continue shopping with confidence.',
+    outcome: ['Improved visibility of delivery-fee changes', 'Reduced ambiguity around customer benefits', 'Created a clearer pattern for policy-related product communication'],
+    learning: 'When a product change affects perceived value, the design challenge is not just communication. It is helping customers understand what changed and what they can still do next.'
+  },
+  {
+    id: 'weee-gift-cards',
+    index: '05',
+    title: 'Weee! Gift cards',
+    subtitle: 'Creating a gift card experience for multilingual customers and culturally relevant gifting moments.',
+    category: 'Commerce',
+    year: '2025',
+    color: '#F4F1E8',
+    tags: ['Gift cards', 'Payments', 'Multilingual UX'],
+    thumbnail: '/case-study-entrances/weee-gift-cards.png',
+    detailImage: '/case-study-entrances/Gift-card-review.png',
+    scope: 'Gift Card · Payments · Multilingual Experience',
+    overviewTitle: 'Designing a flexible gift card experience for a diverse customer base.',
+    overview: 'Weee! serves customers across many cultural communities, so the gift card experience needed to feel simple, trustworthy, and flexible across languages, occasions, and recipient needs.',
+    challengeTitle: 'Gift cards needed to feel easy to send, easy to redeem, and safe to manage.',
+    problem: 'Customers needed a straightforward way to purchase, send, receive, and redeem gift cards, while the system needed to support multiple languages, delivery options, and clear redemption rules.',
+    strategyTitle: 'Build trust through simple flows and clear redemption guidance.',
+    strategy: 'The experience focused on reducing uncertainty across purchase, delivery, and redemption. Clear steps, localized content, and visible confirmation states helped customers feel confident throughout the gift card journey.',
+    solution: 'The design supported multilingual gift card creation, printable and shareable formats, redemption guidance, resend controls, and scheduling flexibility for future gifting moments.',
+    outcome: ['Created a clearer end-to-end gift card flow', 'Supported multilingual customer needs', 'Improved confidence across purchase and redemption moments'],
+    learning: 'Gifting experiences work best when the system feels invisible. Customers should feel confident about the gesture, not worried about the mechanics behind it.'
+  },
+  {
+    id: 'anniversary-round-up',
+    index: '06',
+    title: '10th Anniversary Round-up',
+    subtitle: 'Helping customers revisit their shopping history through a personalized anniversary storytelling experience.',
+    category: 'Engagement',
+    year: '2025',
+    color: '#F4F1E8',
+    tags: ['Personalization', 'Retention', 'Lifecycle'],
+    thumbnail: '/case-study-entrances/10th-anniversary-round-up.png',
+    detailImage: '/case-study-entrances/10th-Round-up-review.png',
+    scope: 'Lifecycle · Personalization · Customer Engagement',
+    overviewTitle: 'Creating a personalized reflection moment for long-time customers.',
+    overview: 'For Weee!’s anniversary, the experience celebrated customer history by transforming past shopping behavior into a lightweight, memorable storytelling moment.',
+    challengeTitle: 'The experience needed to feel personal without becoming complicated.',
+    problem: 'A customer-history experience can quickly become noisy if it shows too much data. The design needed to highlight meaningful moments, feel celebratory, and remain easy to understand across devices.',
+    strategyTitle: 'Turn behavioral data into a simple, emotional story.',
+    strategy: 'I focused the experience around memorable milestones, recognizable shopping moments, and a guided reveal pattern that made customer data feel human, not analytical.',
+    solution: 'The final experience used personalized milestones, first-order memories, frequently purchased items, and celebratory visual storytelling to create a shareable anniversary moment.',
+    outcome: ['Created a lightweight personalized engagement experience', 'Strengthened emotional connection with long-time customers', 'Turned customer behavior data into a memorable story'],
+    learning: 'Personalization is most powerful when it feels like recognition, not reporting. The best moments help customers see their own story in the product.'
+  },
+]
+
+const allCaseStudies = [...caseStudies, ...smallCaseStudies]
+
 const expertise = [
   ['01', 'Product Strategy', 'Turning customer and market insight into focused product bets, roadmaps, and measurable outcomes.'],
   ['02', 'UX Design', 'Creating coherent, accessible experiences across complex customer journeys and service ecosystems.'],
@@ -151,6 +222,97 @@ const experience = [
   ]
 },
 ]
+
+const designProjects = [
+  {
+    title: 'Weee! Company Branding',
+    company: 'Weee!',
+    image: '/design-projects/weee-company-branding-2020.png',
+    thumbnail: '/design-projects/weee-company-branding-2020.png',
+  },
+   {
+    title: 'Crown bakery design calendar competition poster',
+    company: 'Crown Bakery',
+    image: '/design-projects/crown-bakery-design-calendar-competition-poster-2006.png',
+    thumbnail: '/design-projects/crown-bakery-design-calendar-competition-poster-2006.png',
+  },
+	{
+    title: 'Fixya Branding',
+    company: 'Fixya',
+    image: '/design-projects/fixya-branding-2012.png',
+    thumbnail: '/design-projects/fixya-branding-2012.png',
+  },
+  {
+    title: 'Weee! logistic Branding',
+    company: 'Weee!',
+    image: '/design-projects/weee-logistic-branding-2020.png',
+    thumbnail: '/design-projects/weee-logistic-branding-2020.png',
+  },
+  {
+    title: 'Korea Scout Association Brand Identity',
+    company: 'Korea Scout Association',
+    image: '/design-projects/korea-scout-association-brand-identity-2002.png',
+    thumbnail: '/design-projects/korea-scout-association-brand-identity-2002.png',
+  },
+ 
+  
+    {
+    title: 'Team 630 Bicycle Club Branding',
+    company: 'Team 630 Bicycle Club',
+    image: '/design-projects/team-630-bicycle-club-branding-2025.png',
+    thumbnail: '/design-projects/team-630-bicycle-club-branding-2025.png',
+  },
+  {
+    title: 'Kookmin University Brand Identity',
+    company: 'Kookmin University',
+    image: '/design-projects/kookmin-university-brand-identity-2022.png',
+    thumbnail: '/design-projects/kookmin-university-brand-identity-2022.png',
+  },
+    {
+    title: 'Design gallery brochure',
+    company: 'Design Gallery',
+    image: '/design-projects/design-gallery-brochure-2023.png',
+    thumbnail: '/design-projects/design-gallery-brochure-2023.png',
+  },
+  {
+    title: 'Seoul Media Art Biennale Brand Character',
+    company: 'Seoul Media Art Biennale',
+    image: '/design-projects/seoul-media-art-biennale-brand-charactor-2003.png',
+    thumbnail: '/design-projects/seoul-media-art-biennale-brand-charactor-2003.png',
+  },
+  {
+    title: 'Crown Bakery Brand Identity',
+    company: 'Crown Bakery',
+    image: '/design-projects/crown-bakery-brand-identity-2025.png',
+    thumbnail: '/design-projects/crown-bakery-brand-identity-2025.png',
+  },
+  {
+    title: 'Seoul Media Art Biennale Branding',
+    company: 'Seoul Media Art Biennale',
+    image: '/design-projects/seoul-media-art-biennale-branding-2003.png',
+    thumbnail: '/design-projects/seoul-media-art-biennale-branding-2003.png',
+  },
+
+  {
+    title: 'Indicomm Branding',
+    company: 'Indicomm',
+    image: '/design-projects/indicomm-branding-2003.png',
+    thumbnail: '/design-projects/indicomm-branding-2003.png',
+  },
+  {
+    title: 'Hankook Furniture Branding',
+    company: 'Hankook Furniture',
+    image: '/design-projects/hankook-furniture-branding-2002.png',
+    thumbnail: '/design-projects/hankook-furniture-branding-2002.png',
+  },
+  {
+    title: 'Seoul Media Art Biennale brochure',
+    company: 'Seoul Media Art Biennale',
+    image: '/design-projects/seoul-media-art-biennale-brochure-2003.png',
+    thumbnail: '/design-projects/seoul-media-art-biennale-brochure-2003.png',
+  },
+]
+
 
 function Logo() {
   return (
@@ -355,6 +517,39 @@ function Work({ navigate }) {
             </button>
           ))}
         </div>
+
+        {filter === 'All' && (
+          <div className="mt-5 grid gap-5 md:grid-cols-3">
+            {smallCaseStudies.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => navigate(`/${item.id}`)}
+                className="case-card group flex min-h-[500px] w-full flex-col overflow-hidden rounded-[1.75rem] border border-black/10 bg-white text-left transition hover:shadow-2xl hover:shadow-black/10 dark:border-white/10 dark:bg-white/[.04] lg:min-h-[560px]"
+              >
+                <div className="flex items-start justify-between p-7 pb-0 lg:p-10 lg:pb-0">
+                  <span className="font-mono text-xs text-black/40 dark:text-white/40">{item.index} / {item.year}</span>
+                  <span className="case-arrow grid h-11 w-11 place-items-center rounded-full border border-black/15 transition duration-300 dark:border-white/20">
+                    <ArrowUpRight size={18}/>
+                  </span>
+                </div>
+
+                <div className="flex flex-1 flex-col justify-end">
+                  <div className="p-7 pt-10 pb-0 lg:p-10 lg:pt-10 lg:pb-0">
+                    <h3 className="text-4xl font-semibold leading-[1.05] tracking-[-.05em] lg:text-5xl">{item.title}</h3>
+                  </div>
+
+                  <div className="m-3 mt-8 overflow-hidden rounded-[1.25rem] bg-[#f7f4ec] dark:bg-white/[.04]">
+                    <img
+                      src={item.thumbnail}
+                      alt={`${item.title} preview`}
+                      className="aspect-[4/3] w-full object-cover"
+                    />
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   )
@@ -430,11 +625,11 @@ function CasePage({ item, navigate }) {
             <div>
               <p className="text-xs font-bold uppercase tracking-[.14em] text-black/40">Scope</p>
               <p className="mt-3 text-lg font-semibold">
-                {item.id === 'loyalty'
+                {item.scope || (item.id === 'loyalty'
                   ? 'Wallet · Rewards · Checkout · Account'
                   : item.id === 'new-user-homepage'
                     ? 'Homepage · Store Discovery · First Cart · Conversion'
-                    : 'Driver App · Pickup · Delivery · Exceptions'}
+                    : 'Driver App · Pickup · Delivery · Exceptions')}
               </p>
             </div>
           </div>
@@ -445,7 +640,9 @@ function CasePage({ item, navigate }) {
         ? <LoyaltyCaseStudy item={item}/>
         : item.id === 'new-user-homepage'
           ? <NewUserHomepageCaseStudy item={item}/>
-          : <DriverCaseStudy item={item}/>}
+          : smallCaseStudies.some(project => project.id === item.id)
+            ? <SmallCaseStudy item={item}/>
+            : <DriverCaseStudy item={item}/>}
  
       <section className="mx-auto max-w-[1200px] px-5 pb-24 lg:px-10">
         <button
@@ -1030,6 +1227,72 @@ src={
   )
 }
 
+
+function SmallCaseStudy({ item }) {
+  if (item.id === 'delivery-fee-updates' || item.id === 'weee-gift-cards' || item.id === 'anniversary-round-up') {
+    return (
+      <div className="mx-auto max-w-[1200px] px-5 py-20 lg:px-10 lg:py-28">
+        <img
+          src={item.detailImage}
+          alt={`${item.title} review`}
+          className="w-full"
+        />
+      </div>
+    )
+  }
+
+  return (
+    <div className="mx-auto max-w-[1200px] px-5 py-20 lg:px-10 lg:py-28">
+      <CaseSection
+        label="Overview"
+        title={item.overviewTitle}
+        body={item.overview}
+      />
+
+      <CaseSection
+        label="The Challenge"
+        title={item.challengeTitle}
+        body={item.problem}
+      />
+
+      <CaseSection
+        label="Design Strategy"
+        title={item.strategyTitle}
+        body={item.strategy}
+      />
+
+      <section className="py-24">
+        <p className="mb-6 text-xs font-bold uppercase tracking-[.16em] text-black/40 dark:text-white/40">Key Experience</p>
+        <h2 className="max-w-4xl text-4xl font-semibold leading-[1.1] tracking-[-.045em] lg:text-6xl">
+          {item.solution}
+        </h2>
+
+        <div className="mt-12 overflow-hidden rounded-[2rem] bg-[#f7f4ec] dark:bg-white/[.04]">
+          <img
+            src={item.detailImage}
+            alt={`${item.title} experience`}
+            className="w-full object-cover"
+          />
+        </div>
+      </section>
+
+      <section className="border-y border-black/15 py-20 dark:border-white/15">
+        <p className="mb-10 text-xs font-bold uppercase tracking-[.16em] text-black/40 dark:text-white/40">Outcome</p>
+        <div className="grid gap-4 md:grid-cols-3">
+          {item.outcome.map((point, index) => (
+            <div key={point} className="rounded-3xl border border-black/10 bg-white p-7 dark:border-white/10 dark:bg-white/[.04]">
+              <span className="font-mono text-xs text-black/35 dark:text-white/35">0{index + 1}</span>
+              <h3 className="mt-8 text-2xl font-semibold tracking-[-.03em]">{point}</h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <Learning text={item.learning}/>
+    </div>
+  )
+}
+
 function CaseIntro() {
   return (
     <div className="grid gap-6 border-b border-black/15 pb-20 dark:border-white/15 lg:grid-cols-[220px_1fr]">
@@ -1118,6 +1381,88 @@ function Learning({ text }) {
       <p className="mt-8 max-w-4xl text-3xl font-semibold leading-[1.2] tracking-[-.035em] lg:text-5xl">
         {text}
       </p>
+    </section>
+  )
+}
+
+
+function DesignProjectsCarousel() {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const activeProject = designProjects[activeIndex]
+
+  const goToPrevious = () => {
+    setActiveIndex((current) => (current === 0 ? designProjects.length - 1 : current - 1))
+  }
+
+  const goToNext = () => {
+    setActiveIndex((current) => (current === designProjects.length - 1 ? 0 : current + 1))
+  }
+
+  return (
+    <section className="bg-white py-24 text-ink lg:py-32">
+      <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
+        <p className="mb-10 text-xs font-bold uppercase tracking-[.18em] text-black/45">
+          Branding projects
+        </p>
+
+        <div className="relative mx-auto max-w-[760px]">
+          <div className="overflow-hidden rounded-[2rem] bg-black/[.03]">
+            <img
+              src={activeProject.image}
+              alt={activeProject.title}
+              className="aspect-[4/3] w-full object-cover"
+            />
+          </div>
+
+          <button
+            type="button"
+            onClick={goToPrevious}
+            aria-label="Previous design project"
+            className="absolute -left-20 top-1/2 grid h-16 w-16 -translate-y-1/2 place-items-center rounded-full border border-black/15 bg-white text-ink shadow-sm transition hover:bg-ink hover:text-white"
+          >
+            <ArrowRight size={28} className="rotate-180" />
+          </button>
+
+          <button
+            type="button"
+            onClick={goToNext}
+            aria-label="Next design project"
+            className="absolute -right-20 top-1/2 grid h-16 w-16 -translate-y-1/2 place-items-center rounded-full border border-black/15 bg-white text-ink shadow-sm transition hover:bg-ink hover:text-white"
+          >
+            <ArrowRight size={28} />
+          </button>
+        </div>
+
+        <h3 className="mt-8 text-center text-lg font-medium tracking-[.08em] text-black/75 lg:text-xl">
+          {activeProject.title}
+        </h3>
+
+        <div className="mx-auto mt-10 grid max-w-[760px] grid-cols-7 gap-4">
+          {designProjects.map((project, index) => {
+            const isActive = activeIndex === index
+
+            return (
+              <button
+                key={project.title}
+                type="button"
+                onClick={() => setActiveIndex(index)}
+                className={`h-[74px] w-full overflow-hidden rounded-xl border border-[#E5E5E5] bg-black/[.04] transition ${
+                  isActive
+                    ? 'ring-2 ring-black/70 ring-offset-2 ring-offset-white'
+                    : 'opacity-75 hover:opacity-100'
+                }`}
+                aria-label={`Show ${project.title}`}
+              >
+                <img
+                  src={project.thumbnail}
+                  alt=""
+                  className="h-full w-full object-cover"
+                />
+              </button>
+            )
+          })}
+        </div>
+      </div>
     </section>
   )
 }
@@ -1407,7 +1752,7 @@ export default function App() {
     }
   }
 
-  const currentCase = caseStudies.find(item => `/${item.id}` === path)
+  const currentCase = allCaseStudies.find(item => `/${item.id}` === path)
 
   if (currentCase) {
     return (
@@ -1425,6 +1770,7 @@ export default function App() {
       <Hero/>
       <Metrics/>
       <Work navigate={navigate}/>
+      <DesignProjectsCarousel/>
       <About/>
       <Process/>
       <Resume/>
