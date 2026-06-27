@@ -224,23 +224,24 @@ const experience = [
 ]
 
 const designProjects = [
-    {
-    title: 'Weee! logistic Branding',
-    company: 'Weee!',
-    image: '/design-projects/weee-logistic-branding-2020.png',
-    thumbnail: '/design-projects/weee-logistic-branding-2020.png',
+   {
+    title: 'Crown bakery design calendar competition poster',
+    company: 'Crown Bakery',
+    image: '/design-projects/crown-bakery-design-calendar-competition-poster-2006.png',
+    thumbnail: '/design-projects/crown-bakery-design-calendar-competition-poster-2006.png',
   },
+     
   {
     title: 'Weee! Company Branding',
     company: 'Weee!',
     image: '/design-projects/weee-company-branding-2020.png',
     thumbnail: '/design-projects/weee-company-branding-2020.png',
   },
-   {
-    title: 'Crown bakery design calendar competition poster',
-    company: 'Crown Bakery',
-    image: '/design-projects/crown-bakery-design-calendar-competition-poster-2006.png',
-    thumbnail: '/design-projects/crown-bakery-design-calendar-competition-poster-2006.png',
+ {
+    title: 'Weee! logistic Branding',
+    company: 'Weee!',
+    image: '/design-projects/weee-logistic-branding-2020.png',
+    thumbnail: '/design-projects/weee-logistic-branding-2020.png',
   },
 	{
     title: 'Fixya Branding',
