@@ -158,6 +158,7 @@ const smallCaseStudies = [
 ]
 
 const allCaseStudies = [...caseStudies, ...smallCaseStudies]
+const resumeUrl = '/Sukmoon-Product-Design-Lead.pdf'
 
 const expertise = [
   ['01', 'Product Strategy', 'Turning customer and market insight into focused product bets, roadmaps, and measurable outcomes.'],
@@ -327,7 +328,7 @@ function Logo() {
 
 function Nav({ dark, setDark, navigate }) {
   const [open, setOpen] = useState(false)
-  const links = [['Work', '#work'], ['About', '#about'], ['Resume', '#resume'], ['Contact', '#contact']]
+  const links = [['Work', '#work'], ['About', '#about'], ['Experience', '#resume'], ['Contact', '#contact']]
 
   const scrollToSection = (href, behavior = 'smooth') => {
     const el = document.querySelector(href)
@@ -425,7 +426,7 @@ function Hero() {
         </div>
 
         <div className="flex flex-wrap items-center gap-10 border-t border-black/15 pt-5 text-sm dark:border-white/15">
-		  <span>15+ Years Experience</span>
+		  <span>Proven Track Record</span>
 		  <span>Marketplace · Ecommerce · AI</span>
  		 <span>San Francisco Bay Area</span>
 		  <span>Open to New Opportunities</span>
@@ -448,10 +449,10 @@ function Metrics() {
 
         <div className="grid divide-y divide-white/15 border-y border-white/15 md:grid-cols-2 md:divide-x md:divide-y-0 lg:grid-cols-4">
           {[
-				['15+', 'Years Experience'],
-  				['10+', 'Communities Expanded'],
-  				['Global', 'Product Teams'],
- 				['Growth', 'Product Expertise']
+				['Dozens', 'Products & Initiatives Shipped'],
+  				['10+', 'Markets Expanded'],
+  				['Global', 'Cross-Functional Collaboration'],
+ 				['Growth', 'Product & Business Expertise']
           ].map(([n,l],i) => (
             <div key={n} className={`py-10 md:px-8 lg:py-14 ${i === 0 ? 'md:pl-0' : ''}`}>
               <div className="text-6xl font-semibold tracking-[-.06em] lg:text-7xl">{n}</div>
@@ -477,12 +478,12 @@ function Work({ navigate }) {
     <section id="work" className="py-24 lg:py-36">
       <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
         <div className="mb-14 flex flex-col justify-between gap-8 lg:mb-20 lg:flex-row lg:items-end">
-          <div>
+          <div className="min-w-0">
             <p className="mb-5 text-xs font-bold uppercase tracking-[.18em] text-black/45 dark:text-white/45">Selected case studies</p>
             <h2 className="display text-6xl font-semibold lg:text-8xl">Work that turns<br/>complexity into clarity.</h2>
           </div>
 
-          <div className="hide-scrollbar flex gap-2 overflow-x-auto">
+          <div className="flex max-w-full flex-wrap gap-2 lg:max-w-[520px] lg:justify-end">
             {filters.map(f => (
               <button key={f} onClick={() => setFilter(f)} className={`shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition ${filter === f ? 'border-ink bg-ink text-white dark:border-white dark:bg-white dark:text-ink' : 'border-black/15 hover:border-black/50 dark:border-white/20'}`}>
                 {f}
@@ -493,7 +494,7 @@ function Work({ navigate }) {
 
         <div className="space-y-5">
           {shown.map((item) => (
-            <button key={item.id} onClick={() => navigate(`/${item.id}`)} className="case-card group grid w-full overflow-hidden rounded-[1.75rem] border border-black/10 bg-white text-left transition hover:shadow-2xl hover:shadow-black/10 dark:border-white/10 dark:bg-white/[.04] lg:grid-cols-[1.05fr_.95fr]">
+            <button id={`work-${item.id}`} key={item.id} onClick={() => navigate(`/${item.id}`)} className="case-card group grid w-full scroll-mt-24 overflow-hidden rounded-[1.75rem] border border-black/10 bg-white text-left transition hover:shadow-2xl hover:shadow-black/10 dark:border-white/10 dark:bg-white/[.04] lg:grid-cols-[1.05fr_.95fr]">
               <div className="flex min-h-[390px] flex-col justify-between p-7 lg:min-h-[530px] lg:p-12">
                 <div className="flex items-start justify-between">
                   <span className="font-mono text-xs text-black/40 dark:text-white/40">{item.index} / {item.year}</span>
@@ -524,9 +525,10 @@ function Work({ navigate }) {
           <div className="mt-5 grid gap-5 md:grid-cols-3">
             {smallCaseStudies.map((item) => (
               <button
+                id={`work-${item.id}`}
                 key={item.id}
                 onClick={() => navigate(`/${item.id}`)}
-                className="case-card group flex min-h-[500px] w-full flex-col overflow-hidden rounded-[1.75rem] border border-black/10 bg-white text-left transition hover:shadow-2xl hover:shadow-black/10 dark:border-white/10 dark:bg-white/[.04] lg:min-h-[560px]"
+                className="case-card group flex min-h-[500px] w-full scroll-mt-24 flex-col overflow-hidden rounded-[1.75rem] border border-black/10 bg-white text-left transition hover:shadow-2xl hover:shadow-black/10 dark:border-white/10 dark:bg-white/[.04] lg:min-h-[560px]"
               >
                 <div className="flex items-start justify-between p-7 pb-0 lg:p-10 lg:pb-0">
                   <span className="font-mono text-xs text-black/40 dark:text-white/40">{item.index} / {item.year}</span>
@@ -648,7 +650,13 @@ function CasePage({ item, navigate }) {
  
       <section className="mx-auto max-w-[1200px] px-5 pb-24 lg:px-10">
         <button
-          onClick={() => navigate('/')}
+          onClick={() => {
+            navigate('/', { scrollTop: false })
+            setTimeout(() => {
+              const el = document.querySelector(`#work-${item.id}`)
+              if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' })
+            }, 0)
+          }}
           className="mx-auto flex items-center gap-2 rounded-full border border-black/20 px-6 py-3 text-sm font-semibold dark:border-white/20"
         >
           Back to all work <ArrowRight size={16}/>
@@ -1488,10 +1496,10 @@ function About() {
 
             <div className="mt-10 grid gap-8 text-lg leading-relaxed text-black/60 dark:text-white/60 md:grid-cols-2">
               <p>
-                For more than 15 years, I’ve worked across complex product, growth, and commerce challenges — translating ambiguous business goals into clear customer experiences and measurable outcomes.
+                I’ve led a wide range of product, growth, and commerce initiatives—turning complex business challenges into clear customer experiences and measurable outcomes.
               </p>
               <p>
-                I partner closely with product, engineering, data, research, marketing, and operations to turn insight into focused decisions, useful systems, and high-quality execution.
+                I partner closely with product, engineering, data, research, marketing, and operations to turn insight into focused decisions, scalable solutions, and high-quality execution.
               </p>
             </div>
           </div>
@@ -1549,10 +1557,10 @@ function Resume() {
         <div className="flex flex-col justify-between gap-8 border-b border-black/15 pb-12 dark:border-white/15 md:flex-row md:items-end">
           <div>
             <p className="mb-5 text-xs font-bold uppercase tracking-[.18em] text-black/45 dark:text-white/45">Experience</p>
-            <h2 className="display text-6xl font-semibold lg:text-8xl">15+ years.<br/>Still curious.</h2>
+            <h2 className="display text-6xl font-semibold lg:text-8xl">Proven experience.<br/>Still curious.</h2>
           </div>
         <a
-  href="/SukmoonChang-Product-Design-Lead-Resume.pdf"
+  href={resumeUrl}
   download
   target="_blank"
   rel="noopener noreferrer"
