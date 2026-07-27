@@ -23,6 +23,24 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
 }
 .display { letter-spacing: -0.055em; line-height: .91; }
+.loyalty-heading {
+  font-size: clamp(2.35rem, 5vw, 4.75rem);
+  font-weight: 600;
+  letter-spacing: -.055em;
+  line-height: 1.02;
+}
+.loyalty-copy {
+  color: rgb(17 19 24 / .56);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.loyalty-kicker {
+  color: rgb(17 19 24 / .38);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
 .reveal { animation: reveal .8s cubic-bezier(.2,.7,.2,1) both; }
 .delay-1 { animation-delay: .08s; }
 .delay-2 { animation-delay: .16s; }
@@ -35,6 +53,21 @@ body {
 @keyframes marquee { to { transform: translateX(-50%); } }
 .case-card:hover .case-arrow { transform: translate(5px,-5px); }
 .case-card:hover .case-visual { transform: scale(1.015); }
+.design-project-progress {
+  animation: design-project-progress 8s linear forwards;
+  transform-origin: left center;
+}
+.design-project-slide {
+  animation: design-project-slide .55s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes design-project-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes design-project-slide {
+  from { opacity: 0; transform: translateX(18px) scale(.995); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
 .hide-scrollbar::-webkit-scrollbar { display: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }

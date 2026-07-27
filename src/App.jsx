@@ -38,8 +38,8 @@ const caseStudies = [
   {
     id: 'loyalty',
     index: '01',
-    title: 'Loyalty Ecosystem Transformation',
-    subtitle: 'Redesigning rewards, wallet clarity, and expiration logic for a more sustainable loyalty system.',
+    title: 'Redesigning Weee!’s Loyalty Ecosystem',
+    subtitle: 'Separating earned rewards from cash value to create a clearer wallet and a more scalable loyalty system.',
     category: 'Loyalty',
     year: '2026',
     metric: '2-way',
@@ -470,30 +470,18 @@ function Metrics() {
 }
 
 function Work({ navigate }) {
-  const [filter, setFilter] = useState('All')
-  const filters = ['All', 'Loyalty', 'Operations']
-  const shown = filter === 'All' ? caseStudies : caseStudies.filter(c => c.category === filter)
-
   return (
     <section id="work" className="py-24 lg:py-36">
       <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
-        <div className="mb-14 flex flex-col justify-between gap-8 lg:mb-20 lg:flex-row lg:items-end">
+        <div className="mb-14 lg:mb-20">
           <div className="min-w-0">
             <p className="mb-5 text-xs font-bold uppercase tracking-[.18em] text-black/45 dark:text-white/45">Selected case studies</p>
             <h2 className="display text-6xl font-semibold lg:text-8xl">Work that turns<br/>complexity into clarity.</h2>
           </div>
-
-          <div className="flex max-w-full flex-wrap gap-2 lg:max-w-[520px] lg:justify-end">
-            {filters.map(f => (
-              <button key={f} onClick={() => setFilter(f)} className={`shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition ${filter === f ? 'border-ink bg-ink text-white dark:border-white dark:bg-white dark:text-ink' : 'border-black/15 hover:border-black/50 dark:border-white/20'}`}>
-                {f}
-              </button>
-            ))}
-          </div>
         </div>
 
         <div className="space-y-5">
-          {shown.map((item) => (
+          {caseStudies.map((item) => (
             <button id={`work-${item.id}`} key={item.id} onClick={() => navigate(`/${item.id}`)} className="case-card group grid w-full scroll-mt-24 overflow-hidden rounded-[1.75rem] border border-black/10 bg-white text-left transition hover:shadow-2xl hover:shadow-black/10 dark:border-white/10 dark:bg-white/[.04] lg:grid-cols-[1.05fr_.95fr]">
               <div className="flex min-h-[390px] flex-col justify-between p-7 lg:min-h-[530px] lg:p-12">
                 <div className="flex items-start justify-between">
@@ -521,8 +509,7 @@ function Work({ navigate }) {
           ))}
         </div>
 
-        {filter === 'All' && (
-          <div className="mt-5 grid gap-5 md:grid-cols-3">
+        <div className="mt-5 grid gap-5 md:grid-cols-3">
             {smallCaseStudies.map((item) => (
               <button
                 id={`work-${item.id}`}
@@ -542,7 +529,7 @@ function Work({ navigate }) {
                     <h3 className="text-4xl font-semibold leading-[1.05] tracking-[-.05em] lg:text-5xl">{item.title}</h3>
                   </div>
 
-                  <div className="m-3 mt-8 overflow-hidden rounded-[1.25rem] bg-[#f7f4ec] dark:bg-white/[.04]">
+                  <div className="case-visual m-3 mt-8 overflow-hidden rounded-[1.25rem] bg-[#f7f4ec] transition duration-500 dark:bg-white/[.04]">
                     <img
                       src={item.thumbnail}
                       alt={`${item.title} preview`}
@@ -553,7 +540,6 @@ function Work({ navigate }) {
               </button>
             ))}
           </div>
-        )}
       </div>
     </section>
   )
@@ -602,6 +588,9 @@ function CaseVisual({ type }) {
 function CasePage({ item, navigate }) {
   return (
     <main className="pt-18">
+      {item.id === 'loyalty' ? (
+        <LoyaltyHero />
+      ) : (
       <section className="px-5 py-16 lg:px-10 lg:py-24" style={{backgroundColor:item.color}}>
         <div className="mx-auto max-w-[1200px] text-ink">
           <div className="mb-16 flex justify-between text-xs font-bold uppercase tracking-[.14em]">
@@ -639,6 +628,7 @@ function CasePage({ item, navigate }) {
           </div>
         </div>
       </section>
+      )}
 
       {item.id === 'loyalty'
         ? <LoyaltyCaseStudy item={item}/>
@@ -648,7 +638,7 @@ function CasePage({ item, navigate }) {
             ? <SmallCaseStudy item={item}/>
             : <DriverCaseStudy item={item}/>}
  
-      <section className="mx-auto max-w-[1200px] px-5 pb-24 lg:px-10">
+      <section className={`${item.id === 'loyalty' ? 'max-w-none bg-[#f3f1eb] text-[#111318]' : 'mx-auto max-w-[1200px]'} px-5 pb-24 lg:px-10`}>
         <button
           onClick={() => {
             navigate('/', { scrollTop: false })
@@ -666,114 +656,162 @@ function CasePage({ item, navigate }) {
   )
 }
 
-function LoyaltyCaseStudy({ item }) {
+function LoyaltyHero() {
   return (
-    <div className="mx-auto max-w-[1200px] px-5 py-20 lg:px-10 lg:py-28">
-      <CaseIntro />
+    <section className="bg-[#dfb4f7] px-5 py-12 text-[#101114] lg:px-10 lg:py-20">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[.18em]">
+          <span>Case Study 01</span>
+          <span>Loyalty · 2026</span>
+        </div>
+        <h1 className="mt-16 max-w-[960px] text-[clamp(3.6rem,8.7vw,8.5rem)] font-semibold leading-[.88] tracking-[-.07em]">
+          Redesigning<br />Weee!’s Loyalty<br />Ecosystem
+        </h1>
+        <p className="mt-8 max-w-2xl text-lg leading-relaxed text-black/55 lg:text-2xl">
+          Separating earned rewards from cash value to create a clearer wallet and a more scalable loyalty system.
+        </p>
+        <div className="mt-16 grid gap-7 border-t border-black/20 pt-7 text-sm md:grid-cols-3">
+          {[
+            ['Role', 'Senior Product Design Manager'],
+            ['Team', 'Product · Engineering · Data · Operations'],
+            ['Scope', 'Loyalty Strategy · Wallet · Rewards · Checkout'],
+          ].map(([label, value]) => (
+            <div key={label}>
+              <p className="text-[10px] font-bold uppercase tracking-[.16em] text-black/40">{label}</p>
+              <p className="mt-2 font-semibold">{value}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
 
-      <CaseSection
-        label="Executive Summary"
-        title="Redesigning the loyalty ecosystem into a clearer, more sustainable value system."
-        body="We separated earned rewards from cash-equivalent value, redesigned the wallet experience, introduced expiration awareness, and created a scalable foundation for future loyalty programs."
-      />
+function LoyaltyCaseStudy({ item }) {
+  const impactCards = [
+    ['Customer Clarity', ['Distinguished WeeePoints from WeeeCash', 'Made balances and expirations easier to understand']],
+    ['Business Control', ['Defined clearer rules for expiration, redemption, and liability', 'Enabled targeted loyalty and repurchase strategies']],
+    ['Platform Foundation', ['Established a scalable wallet architecture', 'Created a foundation for future rewards and membership programs']],
+  ]
 
-      <BusinessContextSection />
+  return (
+    <div className="bg-[#f3f1eb] text-[#111318] dark:bg-[#f3f1eb] dark:text-[#111318]">
+      <div className="mx-auto max-w-[1200px] px-5 py-20 lg:px-10 lg:py-28">
+        <LoyaltyEditorialSection label="Overview">
+          <h2 className="loyalty-heading max-w-4xl">A clearer loyalty system for customers and the business.</h2>
+          <p className="loyalty-copy mt-7 max-w-3xl">
+            I led the redesign of Weee!’s loyalty ecosystem, separating earned rewards from cash-purchased value to improve clarity, simplify expiration management, and create a scalable foundation for future loyalty programs.
+          </p>
+        </LoyaltyEditorialSection>
 
-      <ProblemStatementSection />
+        <LoyaltyEditorialSection label="The Problem">
+          <h2 className="loyalty-heading max-w-4xl">One balance represented multiple kinds of value.</h2>
+          <p className="loyalty-copy mt-7 max-w-3xl">
+            Weee! Points combined rewards earned through purchases, referrals, reviews, and engagement with cash-purchased value. Customers saw one balance, while the business had to manage different rules for expiration, usage, and liability.
+          </p>
 
-      <CaseSection
-        label="Key Insights"
-        title="The wallet needed to become more than a balance tracker."
-        body={item.insight}
-      />
+          <div className="mt-14">
+            <p className="loyalty-kicker text-center">Multiple sources of value</p>
+            <img src={fiveWaysImage} alt="Five sources of loyalty value" className="mt-8 w-full" />
+          </div>
 
-      <section className="my-24 rounded-[2rem] bg-ink p-8 text-white lg:p-16">
-        <p className="text-xs font-bold uppercase tracking-[.16em] text-white/40">Design Vision</p>
-        <h2 className="mt-8 max-w-4xl text-4xl font-semibold leading-[1.1] tracking-[-.045em] lg:text-6xl">
-          Transform loyalty from a passive balance tracker into a transparent, motivating, and scalable ecosystem.
-        </h2>
-      </section>
+          <div className="mt-16">
+            <p className="loyalty-kicker text-center">What customers actually saw</p>
+            <img src={currentWeeePointImage} alt="The existing single-balance Weee! Points experience" className="mt-8 w-full" />
+          </div>
 
-     <section className="border-y border-black/15 py-20 dark:border-white/15">
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            <div className="rounded-[1.75rem] bg-[#f8f5ee] p-8 lg:p-10">
+              <h3 className="text-xl font-bold uppercase leading-tight tracking-[-.04em] text-black lg:text-2xl">Customer Challenge</h3>
+              <p className="mt-4 max-w-md text-base leading-[1.65] text-black/55 lg:text-lg">Customers could not clearly understand where their value came from or when it would expire.</p>
+            </div>
+            <div className="rounded-[1.75rem] bg-[#f8f5ee] p-8 lg:p-10">
+              <h3 className="text-xl font-bold uppercase leading-tight tracking-[-.04em] text-black lg:text-2xl">Business Challenge</h3>
+              <p className="mt-4 max-w-md text-base leading-[1.65] text-black/55 lg:text-lg">Different value types were difficult to manage within one balance and one expiration model.</p>
+            </div>
+          </div>
+          <p className="mt-12 text-center text-lg font-semibold">Simple on the surface, increasingly complex underneath.</p>
+        </LoyaltyEditorialSection>
 
-  <p className="mb-16 text-xs font-bold uppercase tracking-[.16em] text-black/40 dark:text-white/40">
-    Core Solutions
-  </p>
+        <section className="border-b border-black/10 py-20 lg:py-28">
+          <div className="grid gap-8 lg:grid-cols-[180px_1fr]">
+            <p className="loyalty-kicker">Design Challenge</p>
+            <div>
+              <h2 className="loyalty-heading max-w-4xl">The wallet needed to do more than show a balance.</h2>
+              <p className="loyalty-copy mt-7 max-w-3xl">
+                The experience needed to help customers understand what they owned, where it came from, and when to use it, while giving the business more control over expiration and liability.
+              </p>
+            </div>
+          </div>
+          <div className="mt-14 rounded-[2rem] bg-[#121317] px-8 py-12 text-white lg:px-16 lg:py-16">
+            <p className="text-[11px] font-bold uppercase tracking-[.22em] text-white/45">Design Vision</p>
+            <h3 className="mt-10 max-w-[1050px] text-[clamp(2.7rem,5.5vw,4.8rem)] font-semibold leading-[1.06] tracking-[-.05em]">
+              Turn a balance tracker into a clear, motivating loyalty experience.
+            </h3>
+          </div>
+        </section>
 
-  <div className="space-y-16">
+        <section className="border-b border-black/10 py-20 lg:py-28">
+          <p className="loyalty-kicker mb-12">Solution Strategy</p>
+          <div className="space-y-5">
+            {[
+              [coreSolution1, 'Separate Rewards from Cash'],
+              [coreSolution2, 'Make Value Visible and Actionable'],
+              [coreSolution3, 'Use Expiration to Encourage Return'],
+            ].map(([src, title]) => (
+              <img key={title} src={src} alt={`${title} solution`} className="w-full rounded-[1.75rem]" />
+            ))}
+          </div>
+        </section>
 
-    <div>
-      <img
-        src={coreSolution1}
-        alt="Rewards and Cash Clearly Defined"
-        className="w-full rounded-[2rem]"
-      />
+        <section className="border-b border-black/10 py-20 lg:py-28">
+          <p className="loyalty-kicker mb-8">Key Experiences</p>
+          <h2 className="loyalty-heading max-w-4xl">How the new loyalty system came to life.</h2>
+          <p className="loyalty-copy mt-5 max-w-3xl">Three connected experiences helped customers understand, manage, and use their value.</p>
+          <img src={keyExperienceHero} alt="Before and after loyalty experience" className="mt-12 w-full" />
+
+          <div className="mt-8 space-y-5">
+            {[
+              [walletHomeImage, 'Wallet Overview', 'A clear view of WeeePoints, WeeeCash, available value, and upcoming expirations.'],
+              [walletDetailsImage, 'Earn & Add Value', 'Clear entry points to earn WeeePoints, add WeeeCash, and understand each value type.'],
+              [expirationAwarenessImage, 'Checkout & Rewards', 'Surface available value, reward status, and payment benefits at the moment of purchase.'],
+            ].map(([src, title, description]) => (
+              <img key={title} src={src} alt={`${title}: ${description}`} className="w-full rounded-[1.75rem]" />
+            ))}
+          </div>
+        </section>
+
+        <section className="py-20 lg:py-28">
+          <p className="loyalty-kicker mb-10">Strategic Impact</p>
+          <div className="grid gap-4 md:grid-cols-3">
+            {impactCards.map(([title, points]) => (
+              <article key={title} className="rounded-[1.5rem] bg-white p-7">
+                <h3 className="text-xl font-semibold tracking-[-.035em] text-[#bd3bf1]">{title}</h3>
+                <ul className="mt-5 space-y-3 text-sm leading-relaxed text-black/65">
+                  {points.map(point => <li key={point} className="flex gap-2"><span>•</span><span>{point}</span></li>)}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="rounded-[2rem] bg-[#121317] px-8 py-12 text-white lg:px-16 lg:py-16">
+          <p className="text-[11px] font-bold uppercase tracking-[.22em] text-white/45">What I Learned</p>
+          <h2 className="mt-10 max-w-[1050px] text-[clamp(2.6rem,5vw,4.4rem)] font-semibold leading-[1.08] tracking-[-.045em]">
+            The best loyalty systems aren’t built around points. They’re built on trust, clarity, and motivation that lasts.
+          </h2>
+        </section>
+      </div>
     </div>
+  )
+}
 
-    <div>
-      <img
-        src={coreSolution2}
-        alt="Transparent Wallet"
-        className="w-full rounded-[2rem]"
-      />
-    </div>
-
-    <div>
-      <img
-        src={coreSolution3}
-        alt="Expiration Retention Mechanism"
-        className="w-full rounded-[2rem]"
-      />
-    </div>
-
-    <div>
-      <img
-        src={coreSolution4}
-        alt="Payment Incentives"
-        className="w-full rounded-[2rem]"
-      />
-    </div>
-
-  </div>
-
-</section>
-     
-     
-
-      <section className="py-24">
-        <p className="mb-6 text-xs font-bold uppercase tracking-[.16em] text-black/40 dark:text-white/40">Key Experiences</p>
-        <h2 className="max-w-4xl text-4xl font-semibold leading-[1.1] tracking-[-.045em] lg:text-6xl">
-          How the new loyalty ecosystem came to life across the customer journey.
-        </h2>
-
-       <div className="mt-14 space-y-10">
-
-  <img
-    src={keyExperienceHero}
-    alt="Existing loyalty experience"
-    className="w-full"
-  />
-
-  <div className="rounded-[2rem] overflow-hidden">
-    <img src={walletHomeImage} alt="Wallet Home" className="w-full" />
-  </div>
-
-  <div className="rounded-[2rem] overflow-hidden">
-    <img src={walletDetailsImage} alt="Wallet Details" className="w-full" />
-  </div>
-
-  <div className="rounded-[2rem] overflow-hidden">
-    <img src={expirationAwarenessImage} alt="Expiration Awareness" className="w-full" />
-  </div>
-
-</div>
-       
-      </section>
-
-      <BusinessImpact />
-
-      <Learning text={item.learning} />
-    </div>
+function LoyaltyEditorialSection({ label, children }) {
+  return (
+    <section className="grid gap-8 border-b border-black/10 py-20 lg:grid-cols-[180px_1fr] lg:py-28">
+      <p className="loyalty-kicker">{label}</p>
+      <div>{children}</div>
+    </section>
   )
 }
 
@@ -1398,14 +1436,32 @@ function Learning({ text }) {
 
 function DesignProjectsCarousel() {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [cycleKey, setCycleKey] = useState(0)
   const activeProject = designProjects[activeIndex]
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    const timer = window.setTimeout(() => {
+      setActiveIndex((current) => (current === designProjects.length - 1 ? 0 : current + 1))
+    }, 8000)
+
+    return () => window.clearTimeout(timer)
+  }, [activeIndex, cycleKey])
 
   const goToPrevious = () => {
     setActiveIndex((current) => (current === 0 ? designProjects.length - 1 : current - 1))
+    setCycleKey((current) => current + 1)
   }
 
   const goToNext = () => {
     setActiveIndex((current) => (current === designProjects.length - 1 ? 0 : current + 1))
+    setCycleKey((current) => current + 1)
+  }
+
+  const selectProject = (index) => {
+    setActiveIndex(index)
+    setCycleKey((current) => current + 1)
   }
 
   return (
@@ -1418,10 +1474,15 @@ function DesignProjectsCarousel() {
         <div className="relative mx-auto max-w-[760px]">
           <div className="overflow-hidden rounded-[2rem] bg-black/[.03]">
             <img
+              key={activeProject.image}
               src={activeProject.image}
               alt={activeProject.title}
-              className="aspect-[4/3] w-full object-cover"
+              className="design-project-slide aspect-[4/3] w-full object-cover"
             />
+          </div>
+
+          <div className="mx-auto mt-4 h-[1.5px] w-[90%] overflow-hidden rounded-full bg-black/10" aria-hidden="true">
+            <div key={`${activeIndex}-${cycleKey}`} className="design-project-progress h-full rounded-full bg-black/70" />
           </div>
 
           <button
@@ -1455,7 +1516,7 @@ function DesignProjectsCarousel() {
               <button
                 key={project.title}
                 type="button"
-                onClick={() => setActiveIndex(index)}
+                onClick={() => selectProject(index)}
                 className={`h-[74px] w-full overflow-hidden rounded-xl border border-[#E5E5E5] bg-black/[.04] transition ${
                   isActive
                     ? 'ring-2 ring-black/70 ring-offset-2 ring-offset-white'
