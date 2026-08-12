@@ -158,7 +158,7 @@ const smallCaseStudies = [
 ]
 
 const allCaseStudies = [...caseStudies, ...smallCaseStudies]
-const resumeUrl = '/Sukmoon-Product-Design-Lead.pdf'
+const resumeUrl = '/Sukmoon-Senior-Product-Designer.pdf'
 
 const expertise = [
   ['01', 'Product Strategy', 'Turning customer and market insight into focused product bets, roadmaps, and measurable outcomes.'],
