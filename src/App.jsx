@@ -1468,7 +1468,7 @@ function DesignProjectsCarousel() {
     <section className="bg-white py-24 text-ink lg:py-32">
       <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
         <p className="mb-10 text-xs font-bold uppercase tracking-[.18em] text-black/45">
-          Branding projects
+          Earlier brandinng work
         </p>
 
         <div className="relative mx-auto max-w-[760px]">
