@@ -1,15 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Inter", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Poppins", "Helvetica Neue", Arial, sans-serif;
   --color-canvas: #f4f2ed;
   --color-ink: #111318;
   --color-cobalt: #2457ff;
   --color-sun: #ffdd57;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
 body {
   margin: 0;
   background: #f4f2ed;
@@ -17,6 +21,7 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
+button, input, textarea, select { font: inherit; }
 ::selection { background: #2457ff; color: white; }
 .dark body, body.dark { background: #0d0f14; color: #f4f2ed; }
 .grain {
@@ -40,6 +45,26 @@ body {
   font-weight: 700;
   letter-spacing: .18em;
   text-transform: uppercase;
+}
+.reframe-arrow::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: -1.35rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: .45rem;
+  background: #fff;
+  transform: translateY(-50%) rotate(45deg);
+}
+@media (max-width: 767px) {
+  .reframe-arrow::after {
+    top: auto;
+    right: 50%;
+    bottom: -1.35rem;
+    transform: translateX(50%) rotate(45deg);
+  }
 }
 .reveal { animation: reveal .8s cubic-bezier(.2,.7,.2,1) both; }
 .delay-1 { animation-delay: .08s; }

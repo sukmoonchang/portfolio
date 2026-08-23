@@ -17,6 +17,9 @@ import keyExperienceHero from './assets/Loyalty-key-experience-0.png'
 import walletHomeImage from './assets/Loyalty-key-experience-1.png'
 import walletDetailsImage from './assets/Loyalty-key-experience-2.png'
 import expirationAwarenessImage from './assets/Loyalty-key-experience-3.png'
+import expirationRemindersImage from './assets/Loyalty-key-experience-4.png'
+import loyaltyDiscoveryMechanismsImage from './assets/Loyalty-discovery-mechanisms.png'
+import loyaltyNewSystemImage from './assets/Loyalty-new-system.png'
 import failedDeliveryThumbnail from './assets/failed-delivery-recovery-thumbnail.png'
 import firstTimeUserHomeWalletImage from './assets/first-time-user-home-wallet.png'
 import businessContextImage from './assets/failed-delivery-recovery-business-context.png'
@@ -485,7 +488,7 @@ function Work({ navigate }) {
             <button id={`work-${item.id}`} key={item.id} onClick={() => navigate(`/${item.id}`)} className="case-card group grid w-full scroll-mt-24 overflow-hidden rounded-[1.75rem] border border-black/10 bg-white text-left transition hover:shadow-2xl hover:shadow-black/10 dark:border-white/10 dark:bg-white/[.04] lg:grid-cols-[1.05fr_.95fr]">
               <div className="flex min-h-[390px] flex-col justify-between p-7 lg:min-h-[530px] lg:p-12">
                 <div className="flex items-start justify-between">
-                  <span className="font-mono text-xs text-black/40 dark:text-white/40">{item.index} / {item.year}</span>
+                  <span className="font-sans text-xs text-black/40 dark:text-white/40">{item.index} / {item.year}</span>
                   <span className="case-arrow grid h-11 w-11 place-items-center rounded-full border border-black/15 transition duration-300 dark:border-white/20">
                     <ArrowUpRight size={18}/>
                   </span>
@@ -518,7 +521,7 @@ function Work({ navigate }) {
                 className="case-card group flex min-h-[500px] w-full scroll-mt-24 flex-col overflow-hidden rounded-[1.75rem] border border-black/10 bg-white text-left transition hover:shadow-2xl hover:shadow-black/10 dark:border-white/10 dark:bg-white/[.04] lg:min-h-[560px]"
               >
                 <div className="flex items-start justify-between p-7 pb-0 lg:p-10 lg:pb-0">
-                  <span className="font-mono text-xs text-black/40 dark:text-white/40">{item.index} / {item.year}</span>
+                  <span className="font-sans text-xs text-black/40 dark:text-white/40">{item.index} / {item.year}</span>
                   <span className="case-arrow grid h-11 w-11 place-items-center rounded-full border border-black/15 transition duration-300 dark:border-white/20">
                     <ArrowUpRight size={18}/>
                   </span>
@@ -658,23 +661,24 @@ function CasePage({ item, navigate }) {
 
 function LoyaltyHero() {
   return (
-    <section className="bg-[#dfb4f7] px-5 py-12 text-[#101114] lg:px-10 lg:py-20">
-      <div className="mx-auto max-w-[1200px]">
+    <section className="bg-[#e1b8f8] px-5 py-12 text-[#101114] lg:px-10 lg:py-20">
+      <div className="mx-auto max-w-[1038px]">
         <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[.18em]">
           <span>Case Study 01</span>
           <span>Loyalty · 2026</span>
         </div>
-        <h1 className="mt-16 max-w-[960px] text-[clamp(3.6rem,8.7vw,8.5rem)] font-semibold leading-[.88] tracking-[-.07em]">
+        <h1 className="mt-16 max-w-[960px] text-[clamp(3.6rem,8.7vw,7.8rem)] font-semibold leading-[.82] tracking-[-.065em]">
           Redesigning<br />Weee!’s Loyalty<br />Ecosystem
         </h1>
         <p className="mt-8 max-w-2xl text-lg leading-relaxed text-black/55 lg:text-2xl">
-          Separating earned rewards from cash value to create a clearer wallet and a more scalable loyalty system.
+          A strategic redesign that separated earned rewards from cash value, creating a clearer experience for customers and a more manageable loyalty system for the business.
         </p>
-        <div className="mt-16 grid gap-7 border-t border-black/20 pt-7 text-sm md:grid-cols-3">
+        <div className="mt-10 grid gap-7 border-t border-black/20 pt-7 text-sm sm:grid-cols-2 lg:grid-cols-4">
           {[
-            ['Role', 'Senior Product Design Manager'],
+            ['Role', 'Product Design Lead'],
             ['Team', 'Product · Engineering · Data · Operations'],
-            ['Scope', 'Loyalty Strategy · Wallet · Rewards · Checkout'],
+            ['Scope', 'Wallet · Rewards · Checkout · Account'],
+            ['Status', 'Design Complete · In Testing'],
           ].map(([label, value]) => (
             <div key={label}>
               <p className="text-[10px] font-bold uppercase tracking-[.16em] text-black/40">{label}</p>
@@ -689,88 +693,62 @@ function LoyaltyHero() {
 
 function LoyaltyCaseStudy({ item }) {
   const impactCards = [
-    ['Customer Clarity', ['Distinguished WeeePoints from WeeeCash', 'Made balances and expirations easier to understand']],
-    ['Business Control', ['Defined clearer rules for expiration, redemption, and liability', 'Enabled targeted loyalty and repurchase strategies']],
-    ['Platform Foundation', ['Established a scalable wallet architecture', 'Created a foundation for future rewards and membership programs']],
+    ['Customer Clarity', 'Customers can understand what they earned, what they purchased, and how each balance can be used.'],
+    ['Business Control', 'The business can manage point expiration and outstanding liability without applying reward rules to cash-purchased value.'],
+    ['Platform Foundation', 'The new architecture creates a flexible foundation for future rewards, promotions, and customer re-engagement.'],
   ]
 
   return (
     <div className="bg-[#f3f1eb] text-[#111318] dark:bg-[#f3f1eb] dark:text-[#111318]">
-      <div className="mx-auto max-w-[1200px] px-5 py-20 lg:px-10 lg:py-28">
+      <div className="mx-auto max-w-[1038px] px-5 lg:px-10">
         <LoyaltyEditorialSection label="Overview">
-          <h2 className="loyalty-heading max-w-4xl">A clearer loyalty system for customers and the business.</h2>
+          <h2 className="loyalty-heading max-w-3xl">A clearer loyalty system for customers and the business.</h2>
           <p className="loyalty-copy mt-7 max-w-3xl">
             I led the redesign of Weee!’s loyalty ecosystem, separating earned rewards from cash-purchased value to improve clarity, simplify expiration management, and create a scalable foundation for future loyalty programs.
           </p>
         </LoyaltyEditorialSection>
 
-        <LoyaltyEditorialSection label="The Problem">
-          <h2 className="loyalty-heading max-w-4xl">One balance represented multiple kinds of value.</h2>
-          <p className="loyalty-copy mt-7 max-w-3xl">
-            Weee! Points combined rewards earned through purchases, referrals, reviews, and engagement with cash-purchased value. Customers saw one balance, while the business had to manage different rules for expiration, usage, and liability.
-          </p>
-
-          <div className="mt-14">
-            <p className="loyalty-kicker text-center">Multiple sources of value</p>
-            <img src={fiveWaysImage} alt="Five sources of loyalty value" className="mt-8 w-full" />
-          </div>
-
-          <div className="mt-16">
-            <p className="loyalty-kicker text-center">What customers actually saw</p>
-            <img src={currentWeeePointImage} alt="The existing single-balance Weee! Points experience" className="mt-8 w-full" />
-          </div>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            <div className="rounded-[1.75rem] bg-[#f8f5ee] p-8 lg:p-10">
-              <h3 className="text-xl font-bold uppercase leading-tight tracking-[-.04em] text-black lg:text-2xl">Customer Challenge</h3>
-              <p className="mt-4 max-w-md text-base leading-[1.65] text-black/55 lg:text-lg">Customers could not clearly understand where their value came from or when it would expire.</p>
-            </div>
-            <div className="rounded-[1.75rem] bg-[#f8f5ee] p-8 lg:p-10">
-              <h3 className="text-xl font-bold uppercase leading-tight tracking-[-.04em] text-black lg:text-2xl">Business Challenge</h3>
-              <p className="mt-4 max-w-md text-base leading-[1.65] text-black/55 lg:text-lg">Different value types were difficult to manage within one balance and one expiration model.</p>
-            </div>
-          </div>
-          <p className="mt-12 text-center text-lg font-semibold">Simple on the surface, increasingly complex underneath.</p>
+        <LoyaltyEditorialSection label="The Original Ask">
+          <h2 className="loyalty-heading max-w-3xl">Reduce outstanding liability by introducing expiration for unused points.</h2>
         </LoyaltyEditorialSection>
 
-        <section className="border-b border-black/10 py-20 lg:py-28">
-          <div className="grid gap-8 lg:grid-cols-[180px_1fr]">
-            <p className="loyalty-kicker">Design Challenge</p>
-            <div>
-              <h2 className="loyalty-heading max-w-4xl">The wallet needed to do more than show a balance.</h2>
-              <p className="loyalty-copy mt-7 max-w-3xl">
-                The experience needed to help customers understand what they owned, where it came from, and when to use it, while giving the business more control over expiration and liability.
-              </p>
-            </div>
+        <LoyaltyEditorialSection label="What I Discovered">
+          <img src={loyaltyDiscoveryMechanismsImage} alt="A single points balance fed by five different earning mechanisms" className="w-full" />
+        </LoyaltyEditorialSection>
+
+        <LoyaltyEditorialSection label="Problem">
+          <div className="grid gap-5 md:grid-cols-2">
+            <InsightCard title="Customer problem">Customers could not understand where their value came from, how it could be used, or when it would expire.</InsightCard>
+            <InsightCard title="Business problem">Different value types required different expiration, accounting, and liability rules but were managed as one balance.</InsightCard>
           </div>
-          <div className="mt-14 rounded-[2rem] bg-[#121317] px-8 py-12 text-white lg:px-16 lg:py-16">
-            <p className="text-[11px] font-bold uppercase tracking-[.22em] text-white/45">Design Vision</p>
-            <h3 className="mt-10 max-w-[1050px] text-[clamp(2.7rem,5.5vw,4.8rem)] font-semibold leading-[1.06] tracking-[-.05em]">
-              Turn a balance tracker into a clear, motivating loyalty experience.
-            </h3>
+        </LoyaltyEditorialSection>
+
+        <LoyaltyEditorialSection label="How I Reframed the Problem">
+          <h2 className="loyalty-heading max-w-3xl">The real problem was not how to expire points. It was how to separate two fundamentally different types of value.</h2>
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            <InsightCard title="Original question" arrow>How might we expire unused points?</InsightCard>
+            <InsightCard title="Reframed question" accent>How might we separate earned rewards from cash value while keeping the experience simple for customers?</InsightCard>
           </div>
+        </LoyaltyEditorialSection>
+
+        <section className="border-b border-black/10 py-20 lg:py-24">
+          <p className="loyalty-kicker">The New System</p>
+          <h2 className="loyalty-heading mt-10 max-w-4xl">One balance became two clearly defined value systems.</h2>
+          <p className="loyalty-copy mt-5 max-w-4xl">We separated earned rewards from cash-purchased value so that each could follow the right expiration, accounting, and usage rules. This created a clearer customer experience and a more manageable foundation for the loyalty program.</p>
+          <img src={loyaltyNewSystemImage} alt="Before and after loyalty value-system architecture" className="mt-10 w-full" />
         </section>
 
-        <section className="border-b border-black/10 py-20 lg:py-28">
-          <p className="loyalty-kicker mb-12">Solution Strategy</p>
-          <div className="space-y-5">
-            {[
-              [coreSolution1, 'Separate Rewards from Cash'],
-              [coreSolution2, 'Make Value Visible and Actionable'],
-              [coreSolution3, 'Use Expiration to Encourage Return'],
-            ].map(([src, title]) => (
-              <img key={title} src={src} alt={`${title} solution`} className="w-full rounded-[1.75rem]" />
-            ))}
+        <section className="border-b border-black/10 py-20 lg:py-24">
+          <p className="loyalty-kicker">Key Experiences</p>
+          <h2 className="loyalty-heading mt-10 max-w-4xl">How the new system works across the customer journey.</h2>
+          <p className="loyalty-copy mt-5 max-w-3xl">Connected experiences help customers understand, manage, and use each type of value.</p>
+          <ExperienceStateLabel className="mt-10" state="Before">A single balance with limited context.</ExperienceStateLabel>
+          <div className="mt-6 aspect-[957/366] w-full overflow-hidden">
+            <img src={keyExperienceHero} alt="The previous account and single-balance points experience" className="w-full -translate-y-[15%]" />
           </div>
-        </section>
 
-        <section className="border-b border-black/10 py-20 lg:py-28">
-          <p className="loyalty-kicker mb-8">Key Experiences</p>
-          <h2 className="loyalty-heading max-w-4xl">How the new loyalty system came to life.</h2>
-          <p className="loyalty-copy mt-5 max-w-3xl">Three connected experiences helped customers understand, manage, and use their value.</p>
-          <img src={keyExperienceHero} alt="Before and after loyalty experience" className="mt-12 w-full" />
-
-          <div className="mt-8 space-y-5">
+          <ExperienceStateLabel className="mt-10" state="After">Two distinct balances with clear context and controls.</ExperienceStateLabel>
+          <div className="mt-6 space-y-9">
             {[
               [walletHomeImage, 'Wallet Overview', 'A clear view of WeeePoints, WeeeCash, available value, and upcoming expirations.'],
               [walletDetailsImage, 'Earn & Add Value', 'Clear entry points to earn WeeePoints, add WeeeCash, and understand each value type.'],
@@ -779,26 +757,28 @@ function LoyaltyCaseStudy({ item }) {
               <img key={title} src={src} alt={`${title}: ${description}`} className="w-full rounded-[1.75rem]" />
             ))}
           </div>
+          <ExperienceStateLabel className="mt-14" state="Proposed Direction" />
+          <img src={expirationRemindersImage} alt="Expiration reminders through push, email, and the notification center" className="mt-6 w-full rounded-[1.75rem]" />
         </section>
 
-        <section className="py-20 lg:py-28">
-          <p className="loyalty-kicker mb-10">Strategic Impact</p>
+        <section className="py-20 lg:py-24">
+          <p className="loyalty-kicker">Strategic Value</p>
+          <h2 className="loyalty-heading mt-10 max-w-4xl">Clearer for customers. More control for the business.</h2>
+          <p className="loyalty-copy mt-5 max-w-4xl">By separating earned rewards from cash-purchased value, the new system makes balances easier to understand while giving the business more control over expiration and outstanding liability.</p>
           <div className="grid gap-4 md:grid-cols-3">
-            {impactCards.map(([title, points]) => (
-              <article key={title} className="rounded-[1.5rem] bg-white p-7">
-                <h3 className="text-xl font-semibold tracking-[-.035em] text-[#bd3bf1]">{title}</h3>
-                <ul className="mt-5 space-y-3 text-sm leading-relaxed text-black/65">
-                  {points.map(point => <li key={point} className="flex gap-2"><span>•</span><span>{point}</span></li>)}
-                </ul>
+            {impactCards.map(([title, description]) => (
+              <article key={title} className="mt-10 rounded-[1.5rem] bg-white p-7">
+                <h3 className="text-lg font-semibold tracking-[-.03em] text-[#bd3bf1]">{title}</h3>
+                <p className="mt-3 text-base leading-[1.25] text-black">{description}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="rounded-[2rem] bg-[#121317] px-8 py-12 text-white lg:px-16 lg:py-16">
+        <section className="mb-16 rounded-[2rem] bg-[#121317] px-8 py-12 text-white lg:px-16 lg:py-16">
           <p className="text-[11px] font-bold uppercase tracking-[.22em] text-white/45">What I Learned</p>
           <h2 className="mt-10 max-w-[1050px] text-[clamp(2.6rem,5vw,4.4rem)] font-semibold leading-[1.08] tracking-[-.045em]">
-            The best loyalty systems aren’t built around points. They’re built on trust, clarity, and motivation that lasts.
+            I learned that the most important design decisions can happen before the interface. Separating the two types of value made the system easier for customers to understand and trust.
           </h2>
         </section>
       </div>
@@ -812,6 +792,25 @@ function LoyaltyEditorialSection({ label, children }) {
       <p className="loyalty-kicker">{label}</p>
       <div>{children}</div>
     </section>
+  )
+}
+
+function InsightCard({ title, accent = false, arrow = false, children }) {
+  return (
+    <article className={`relative rounded-[1.35rem] p-7 ${accent ? 'bg-[#ff8080] text-white' : 'bg-white text-black'} ${arrow ? 'reframe-arrow' : ''}`}>
+      <h3 className="text-lg font-semibold tracking-[-.03em]">{title}</h3>
+      <p className={`mt-3 text-sm leading-relaxed ${accent ? 'text-white/90' : 'text-black/60'}`}>{children}</p>
+    </article>
+  )
+}
+
+function ExperienceStateLabel({ state, className = '', children }) {
+  const isAccent = ['after', 'proposed direction'].includes(state.toLowerCase())
+  return (
+    <div className={`flex flex-wrap items-center gap-3 ${className}`}>
+      <span className={`rounded-md px-2 py-2 text-[11px] font-bold uppercase tracking-[.08em] text-white ${isAccent ? 'bg-[#b64cff]' : 'bg-[#91908c]'}`}>{state}</span>
+      {children && <span className="text-base text-black/60 lg:text-xl">{children}</span>}
+    </div>
   )
 }
 
@@ -1157,7 +1156,7 @@ function NewUserHomepageCaseStudy({ item }) {
           <div className="mt-12 space-y-4">
             {challenges.map(([number, title, description]) => (
               <div key={title} className="grid gap-5 rounded-[2rem] border border-black/10 bg-white p-7 dark:border-white/10 dark:bg-white/[.04] md:grid-cols-[80px_1fr]">
-                <span className="font-mono text-sm text-black/35 dark:text-white/35">{number}</span>
+                <span className="font-sans text-sm text-black/35 dark:text-white/35">{number}</span>
                 <div>
                   <h3 className="text-2xl font-semibold tracking-[-.035em]">{title}</h3>
                   <p className="mt-3 max-w-3xl leading-relaxed text-black/60 dark:text-white/55">{description}</p>
@@ -1214,7 +1213,7 @@ function NewUserHomepageCaseStudy({ item }) {
         <div className="mt-14 space-y-5">
           {solutions.map(([number, title, description]) => (
             <div key={title} className="grid gap-5 rounded-[2rem] border border-black/10 bg-white p-7 dark:border-white/10 dark:bg-white/[.04] md:grid-cols-[80px_1fr]">
-              <span className="font-mono text-sm text-black/35 dark:text-white/35">{number}</span>
+              <span className="font-sans text-sm text-black/35 dark:text-white/35">{number}</span>
               <div>
                 <h3 className="text-2xl font-semibold tracking-[-.035em]">{title}</h3>
                 <p className="mt-3 max-w-3xl leading-relaxed text-black/60 dark:text-white/55">{description}</p>
@@ -1250,7 +1249,7 @@ src={
         <div className="grid gap-4 md:grid-cols-2">
           {principles.map((principle, index) => (
             <div key={principle} className="rounded-3xl border border-black/10 bg-white p-7 dark:border-white/10 dark:bg-white/[.04]">
-              <span className="font-mono text-xs text-black/35 dark:text-white/35">0{index + 1}</span>
+              <span className="font-sans text-xs text-black/35 dark:text-white/35">0{index + 1}</span>
               <h3 className="mt-8 text-2xl font-semibold tracking-[-.03em]">{principle}</h3>
             </div>
           ))}
@@ -1329,7 +1328,7 @@ function SmallCaseStudy({ item }) {
         <div className="grid gap-4 md:grid-cols-3">
           {item.outcome.map((point, index) => (
             <div key={point} className="rounded-3xl border border-black/10 bg-white p-7 dark:border-white/10 dark:bg-white/[.04]">
-              <span className="font-mono text-xs text-black/35 dark:text-white/35">0{index + 1}</span>
+              <span className="font-sans text-xs text-black/35 dark:text-white/35">0{index + 1}</span>
               <h3 className="mt-8 text-2xl font-semibold tracking-[-.03em]">{point}</h3>
             </div>
           ))}
@@ -1569,7 +1568,7 @@ function About() {
         <div className="mt-24 border-t border-black/15 dark:border-white/15">
           {expertise.map(([n,title,desc]) => (
             <div key={n} className="group grid gap-4 border-b border-black/15 py-7 dark:border-white/15 lg:grid-cols-[.15fr_.45fr_1fr] lg:items-center lg:py-9">
-              <span className="font-mono text-xs text-black/35 dark:text-white/35">{n}</span>
+              <span className="font-sans text-xs text-black/35 dark:text-white/35">{n}</span>
               <h3 className="text-2xl font-semibold tracking-[-.03em] lg:text-3xl">{title}</h3>
               <p className="max-w-2xl text-black/55 transition group-hover:text-black dark:text-white/50 dark:group-hover:text-white">{desc}</p>
             </div>
@@ -1600,7 +1599,7 @@ function Process() {
             ['Scale the learning', 'Build systems, operating habits, and shared language so each launch improves the organization, not just the product.']
           ].map(([t,d],i) => (
             <div key={t} className="rounded-3xl border border-black/10 bg-white p-8 dark:border-white/10 dark:bg-white/[.04]">
-              <span className="font-mono text-xs text-black/35 dark:text-white/35">0{i+1}</span>
+              <span className="font-sans text-xs text-black/35 dark:text-white/35">0{i+1}</span>
               <h3 className="mt-8 text-2xl font-semibold tracking-[-.03em]">{t}</h3>
               <p className="mt-4 text-black/55 dark:text-white/50">{d}</p>
             </div>
@@ -1635,7 +1634,7 @@ function Resume() {
         <div className="divide-y divide-black/15 dark:divide-white/15">
           {experience.map(item => (
             <div key={item.years} className="grid gap-4 py-9 md:grid-cols-[.25fr_.55fr_1fr]">
-              <span className="font-mono text-xs text-black/40 dark:text-white/40">{item.years}</span>
+              <span className="font-sans text-xs text-black/40 dark:text-white/40">{item.years}</span>
               <div>
                 <h3 className="font-bold">{item.role}</h3>
                 <p className="mt-1 text-sm text-black/45 dark:text-white/45">{item.company}</p>
