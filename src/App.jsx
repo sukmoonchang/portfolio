@@ -178,10 +178,10 @@ const experience = [
     role: 'Senior Product Design Manager',
     company: 'Weee!',
     bullets: [
-      'Led end-to-end product design across Growth, Loyalty, Marketplace, Checkout, and AI initiatives.',
-      'Translated ambiguous business goals into clear customer journeys, product flows, and measurable experiments.',
-      'Designed key initiatives including Loyalty Ecosystem Transformation, AI Shopping Assistant, and checkout/post-purchase improvements.',
-      'Supported marketplace expansion across 10+ ethnic communities through localized shopping and discovery experiences.'
+      'Owned end-to-end product design across Growth, Loyalty, Marketplace, Checkout, and AI initiatives.',
+      'Managed and mentored product designers while remaining hands-on from strategy through execution.',
+      'Turned ambiguous business goals into clear customer journeys, scalable systems, and measurable experiments.',
+      'Partnered with product, engineering, data, and operations to launch experiences across 10+ ethnic communities.'
     ]
   },
   {
@@ -202,29 +202,13 @@ const experience = [
   },
   
   {
-  years: '2013',
-  role: 'Instructor',
-  company: 'Olivet University',
-  bullets: [
-    'Taught Advanced Interface Design and mentored graduate students through portfolio-focused design projects.',
-  ]
-},
-{
-  years: '2007—2008',
-  role: 'Design Manager',
-  company: 'Artirus Design',
-  bullets: [
-    'Led branding and packaging design projects, guided designers through creative direction, and managed client work including projects for the Korea Tourism Organization.',
-  ]
-},
-{
-  years: '2004—2007',
-  role: 'Sr. Graphic Designer',
-  company: 'Crown Confectionery',
-  bullets: [
-    'Led web, branding, packaging, and marketing design projects for the Crown Bakery franchise, including brand stories, characters, and sub-brand development.',
-  ]
-},
+    years: '2004—2013',
+    role: 'Earlier Design Experience',
+    company: 'Artirus Design · Olivet University\nCrown Confectionery',
+    bullets: [
+      'Led branding and visual design projects, managed designers, and taught advanced interface design.',
+    ]
+  },
 ]
 
 const designProjects = [
@@ -439,42 +423,9 @@ function Hero() {
   )
 }
 
-function Metrics() {
-  return (
-    <section className="bg-ink py-20 text-white lg:py-28">
-      <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
-        <div className="mb-16 flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
-          <p className="text-xs font-bold uppercase tracking-[.18em] text-white/50">Selected impact</p>
-          <h2 className="max-w-3xl text-4xl font-semibold leading-[1.05] tracking-[-.045em] lg:text-6xl">
-				Building products that drive customer value and business growth.
-          </h2>
-        </div>
-
-        <div className="grid divide-y divide-white/15 border-y border-white/15 md:grid-cols-2 md:divide-x md:divide-y-0 lg:grid-cols-4">
-          {[
-				['Dozens', 'Products & Initiatives Shipped'],
-  				['10+', 'Markets Expanded'],
-  				['Global', 'Cross-Functional Collaboration'],
- 				['Growth', 'Product & Business Expertise']
-          ].map(([n,l],i) => (
-            <div key={n} className={`py-10 md:px-8 lg:py-14 ${i === 0 ? 'md:pl-0' : ''}`}>
-              <div className="text-6xl font-semibold tracking-[-.06em] lg:text-7xl">{n}</div>
-              <div className="mt-4 text-sm text-white/55">{l}</div>
-            </div>
-          ))}
-        </div>
-
-        <p className="mt-6 text-xs text-white/35">
-          Selected results are summarized to protect proprietary business information while accurately reflecting impact.
-        </p>
-      </div>
-    </section>
-  )
-}
-
 function Work({ navigate }) {
   return (
-    <section id="work" className="py-24 lg:py-36">
+    <section id="work" className="bg-[#E8E4DB] py-24 dark:bg-[#0d0f14] lg:py-36">
       <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
         <div className="mb-14 lg:mb-20">
           <div className="min-w-0">
@@ -1544,7 +1495,7 @@ function About() {
       <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-[.14fr_.42fr_1fr] lg:gap-8">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[.18em] text-black/45 dark:text-white/45">
+            <p className="whitespace-nowrap text-xs font-bold uppercase tracking-[.18em] text-black/45 dark:text-white/45">
               HOW I WORK
             </p>
           </div>
@@ -1587,24 +1538,13 @@ function Process() {
           Design philosophy
         </p>
 
-        <h2 className="display mb-16 text-6xl font-semibold lg:text-8xl">
+        <h2 className="display text-6xl font-semibold lg:text-8xl">
           Clarity over <span className="text-cobalt">ceremony.</span>
         </h2>
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {[
-            ['Frame the right problem', 'Align on the customer behavior, business constraint, and decision we need to influence before exploring solutions.'],
-            ['Make strategy tangible', 'Use prototypes, narratives, and clear principles to turn abstract direction into something teams can align on and build.'],
-            ['Learn at the speed of risk', 'Match research and experimentation to uncertainty. Test the most consequential assumptions first.'],
-            ['Scale the learning', 'Build systems, operating habits, and shared language so each launch improves the organization, not just the product.']
-          ].map(([t,d],i) => (
-            <div key={t} className="rounded-3xl border border-black/10 bg-white p-8 dark:border-white/10 dark:bg-white/[.04]">
-              <span className="font-sans text-xs text-black/35 dark:text-white/35">0{i+1}</span>
-              <h3 className="mt-8 text-2xl font-semibold tracking-[-.03em]">{t}</h3>
-              <p className="mt-4 text-black/55 dark:text-white/50">{d}</p>
-            </div>
-          ))}
-        </div>
+        <p className="mt-7 max-w-6xl text-3xl font-medium leading-[1.2] tracking-[-.025em] text-black/55 dark:text-white/55 md:text-4xl lg:text-5xl">
+          I frame the right problem, make strategy tangible, and test the riskiest assumptions early. Then I turn what works into reusable systems and shared principles.
+        </p>
       </div>
     </section>
   )
@@ -1613,7 +1553,7 @@ function Process() {
 function Resume() {
   return (
     <section id="resume" className="bg-white py-24 text-ink dark:bg-[#15181f] dark:text-white lg:py-36">
-      <div className="mx-auto max-w-[1200px] px-5 lg:px-10">
+      <div className="mx-auto max-w-[1680px] px-5 lg:px-10">
         <div className="flex flex-col justify-between gap-8 border-b border-black/15 pb-12 dark:border-white/15 md:flex-row md:items-end">
           <div>
             <p className="mb-5 text-xs font-bold uppercase tracking-[.18em] text-black/45 dark:text-white/45">Experience</p>
@@ -1633,11 +1573,11 @@ function Resume() {
 
         <div className="divide-y divide-black/15 dark:divide-white/15">
           {experience.map(item => (
-            <div key={item.years} className="grid gap-4 py-9 md:grid-cols-[.25fr_.55fr_1fr]">
+            <div key={item.years} className="grid gap-4 py-10 md:grid-cols-[.16fr_.32fr_.68fr] lg:gap-10 lg:py-14">
               <span className="font-sans text-xs text-black/40 dark:text-white/40">{item.years}</span>
               <div>
-                <h3 className="font-bold">{item.role}</h3>
-                <p className="mt-1 text-sm text-black/45 dark:text-white/45">{item.company}</p>
+                <h3 className="text-lg font-bold">{item.role}</h3>
+                <p className="mt-1 whitespace-pre-line text-sm leading-relaxed text-black/45 dark:text-white/45">{item.company}</p>
               </div>
               {item.bullets ? (
                 <ul className="space-y-3 text-[18px] leading-relaxed text-black/60 dark:text-white/55">
@@ -1838,7 +1778,6 @@ export default function App() {
     <div className={dark ? 'dark bg-[#0d0f14] text-white' : 'bg-canvas text-ink'}>
       <Nav dark={dark} setDark={setDark} navigate={navigate}/>
       <Hero/>
-      <Metrics/>
       <Work navigate={navigate}/>
       <DesignProjectsCarousel/>
       <About/>
