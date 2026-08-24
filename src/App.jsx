@@ -165,11 +165,9 @@ const resumeUrl = '/Sukmoon-Senior-Product-Designer.pdf'
 
 const expertise = [
   ['01', 'Product Strategy', 'Turning customer and market insight into focused product bets, roadmaps, and measurable outcomes.'],
-  ['02', 'UX Design', 'Creating coherent, accessible experiences across complex customer journeys and service ecosystems.'],
-  ['03', 'Design Direction', 'Setting clear design principles, raising the quality bar, and helping teams make better product decisions.'],
-  ['04', 'Experimentation & Growth', 'Using behavioral insight and rigorous testing to unlock acquisition, conversion, and retention.'],
-  ['05', 'Marketplace Experience', 'Designing customer, operator, and fulfillment experiences across complex marketplace systems.'],
-  ['06', 'Ecommerce Experience', 'Optimizing discovery, basket building, checkout, fulfillment, loyalty, and post-purchase.'],
+  ['02', 'Experience Design', 'Creating clear, accessible experiences across complex customer journeys and service ecosystems.'],
+  ['03', 'Experimentation & Growth', 'Using behavioral insight and testing to improve acquisition, conversion, and retention.'],
+  ['04', 'Design Leadership', 'Setting clear design principles, raising the quality bar, and helping teams make better product decisions.'],
 ]
 
 const experience = [
@@ -212,94 +210,29 @@ const experience = [
 ]
 
 const designProjects = [
-   {
-    title: 'Crown bakery design calendar competition poster',
-    company: 'Crown Bakery',
-    image: '/design-projects/crown-bakery-design-calendar-competition-poster-2006.png',
-    thumbnail: '/design-projects/crown-bakery-design-calendar-competition-poster-2006.png',
-  },
-     
   {
-    title: 'Weee! Company Branding',
-    company: 'Weee!',
+    title: 'Weee! Brand Identity',
     image: '/design-projects/weee-company-branding-2020.png',
-    thumbnail: '/design-projects/weee-company-branding-2020.png',
   },
- {
-    title: 'Weee! logistic Branding',
-    company: 'Weee!',
-    image: '/design-projects/weee-logistic-branding-2020.png',
-    thumbnail: '/design-projects/weee-logistic-branding-2020.png',
+  {
+    title: 'Crown Bakery Promotional Poster',
+    image: '/design-projects/crown-bakery-design-calendar-competition-poster-2006.png',
   },
-	{
-    title: 'Fixya Branding',
-    company: 'Fixya',
-    image: '/design-projects/fixya-branding-2012.png',
-    thumbnail: '/design-projects/fixya-branding-2012.png',
-  },
-
   {
     title: 'Korea Scout Association Brand Identity',
-    company: 'Korea Scout Association',
     image: '/design-projects/korea-scout-association-brand-identity-2002.png',
-    thumbnail: '/design-projects/korea-scout-association-brand-identity-2002.png',
-  },
- 
-  
-    {
-    title: 'Team 630 Bicycle Club Branding',
-    company: 'Team 630 Bicycle Club',
-    image: '/design-projects/team-630-bicycle-club-branding-2025.png',
-    thumbnail: '/design-projects/team-630-bicycle-club-branding-2025.png',
   },
   {
-    title: 'Kookmin University Brand Identity',
-    company: 'Kookmin University',
-    image: '/design-projects/kookmin-university-brand-identity-2022.png',
-    thumbnail: '/design-projects/kookmin-university-brand-identity-2022.png',
-  },
-    {
-    title: 'Design gallery brochure',
-    company: 'Design Gallery',
-    image: '/design-projects/design-gallery-brochure-2023.png',
-    thumbnail: '/design-projects/design-gallery-brochure-2023.png',
-  },
-  {
-    title: 'Seoul Media Art Biennale Brand Character',
-    company: 'Seoul Media Art Biennale',
-    image: '/design-projects/seoul-media-art-biennale-brand-charactor-2003.png',
-    thumbnail: '/design-projects/seoul-media-art-biennale-brand-charactor-2003.png',
-  },
-  {
-    title: 'Crown Bakery Brand Identity',
-    company: 'Crown Bakery',
+    title: 'Crown bakery Brand Identity',
     image: '/design-projects/crown-bakery-brand-identity-2025.png',
-    thumbnail: '/design-projects/crown-bakery-brand-identity-2025.png',
   },
   {
-    title: 'Seoul Media Art Biennale Branding',
-    company: 'Seoul Media Art Biennale',
-    image: '/design-projects/seoul-media-art-biennale-branding-2003.png',
-    thumbnail: '/design-projects/seoul-media-art-biennale-branding-2003.png',
-  },
-
-  {
-    title: 'Indicomm Branding',
-    company: 'Indicomm',
-    image: '/design-projects/indicomm-branding-2003.png',
-    thumbnail: '/design-projects/indicomm-branding-2003.png',
-  },
-  {
-    title: 'Hankook Furniture Branding',
-    company: 'Hankook Furniture',
-    image: '/design-projects/hankook-furniture-branding-2002.png',
-    thumbnail: '/design-projects/hankook-furniture-branding-2002.png',
-  },
-  {
-    title: 'Seoul Media Art Biennale brochure',
-    company: 'Seoul Media Art Biennale',
+    title: 'Seoul Media Art Biennale Identity System',
     image: '/design-projects/seoul-media-art-biennale-brochure-2003.png',
-    thumbnail: '/design-projects/seoul-media-art-biennale-brochure-2003.png',
+  },
+  {
+    title: 'Exhibition Booklet Design',
+    image: '/design-projects/design-gallery-brochure-2023.png',
   },
 ]
 
@@ -354,8 +287,8 @@ function Nav({ dark, setDark, navigate }) {
             {dark ? <Sun size={16}/> : <Moon size={16}/>}
           </button>
 
-          <a href="mailto:sukmoon.chang@gmail.com" className="rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:scale-[1.03] dark:bg-white dark:text-ink">
-            Let’s talk
+          <a href={resumeUrl} download target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:scale-[1.03] dark:bg-white dark:text-ink">
+            <Download size={16} /> Download résumé
           </a>
         </div>
 
@@ -413,10 +346,9 @@ function Hero() {
         </div>
 
         <div className="flex flex-wrap items-center gap-10 border-t border-black/15 pt-5 text-sm dark:border-white/15">
-		  <span>Proven Track Record</span>
+		  <span>12+ Years in Product Design</span>
 		  <span>Marketplace · Ecommerce · AI</span>
  		 <span>San Francisco Bay Area</span>
-		  <span>Open to New Opportunities</span>
 </div>
       </div>
     </header>
@@ -1384,104 +1316,29 @@ function Learning({ text }) {
 }
 
 
-function DesignProjectsCarousel() {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [cycleKey, setCycleKey] = useState(0)
-  const activeProject = designProjects[activeIndex]
-
-  useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-
-    const timer = window.setTimeout(() => {
-      setActiveIndex((current) => (current === designProjects.length - 1 ? 0 : current + 1))
-    }, 8000)
-
-    return () => window.clearTimeout(timer)
-  }, [activeIndex, cycleKey])
-
-  const goToPrevious = () => {
-    setActiveIndex((current) => (current === 0 ? designProjects.length - 1 : current - 1))
-    setCycleKey((current) => current + 1)
-  }
-
-  const goToNext = () => {
-    setActiveIndex((current) => (current === designProjects.length - 1 ? 0 : current + 1))
-    setCycleKey((current) => current + 1)
-  }
-
-  const selectProject = (index) => {
-    setActiveIndex(index)
-    setCycleKey((current) => current + 1)
-  }
-
+function VisualDesignWork() {
   return (
-    <section className="bg-white py-24 text-ink lg:py-32">
+    <section className="bg-[#F3F1EB] py-24 text-ink lg:py-32">
       <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
-        <p className="mb-10 text-xs font-bold uppercase tracking-[.18em] text-black/45">
-          EARLIER BRANDING WORK
+        <p className="mb-14 text-xs font-bold uppercase tracking-[.2em] text-black/40 lg:mb-16">
+          EARLIER VISUAL DESIGN WORK
         </p>
 
-        <div className="relative mx-auto max-w-[760px]">
-          <div className="overflow-hidden rounded-[2rem] bg-black/[.03]">
-            <img
-              key={activeProject.image}
-              src={activeProject.image}
-              alt={activeProject.title}
-              className="design-project-slide aspect-[4/3] w-full object-cover"
-            />
-          </div>
-
-          <div className="mx-auto mt-4 h-[1.5px] w-[90%] overflow-hidden rounded-full bg-black/10" aria-hidden="true">
-            <div key={`${activeIndex}-${cycleKey}`} className="design-project-progress h-full rounded-full bg-black/70" />
-          </div>
-
-          <button
-            type="button"
-            onClick={goToPrevious}
-            aria-label="Previous design project"
-            className="absolute -left-20 top-1/2 grid h-16 w-16 -translate-y-1/2 place-items-center rounded-full border border-black/15 bg-white text-ink shadow-sm transition hover:bg-ink hover:text-white"
-          >
-            <ArrowRight size={28} className="rotate-180" />
-          </button>
-
-          <button
-            type="button"
-            onClick={goToNext}
-            aria-label="Next design project"
-            className="absolute -right-20 top-1/2 grid h-16 w-16 -translate-y-1/2 place-items-center rounded-full border border-black/15 bg-white text-ink shadow-sm transition hover:bg-ink hover:text-white"
-          >
-            <ArrowRight size={28} />
-          </button>
-        </div>
-
-        <h3 className="mt-8 text-center text-lg font-medium tracking-[.08em] text-black/75 lg:text-xl">
-          {activeProject.title}
-        </h3>
-
-        <div className="mx-auto mt-10 grid max-w-[760px] grid-cols-7 gap-4">
-          {designProjects.map((project, index) => {
-            const isActive = activeIndex === index
-
-            return (
-              <button
-                key={project.title}
-                type="button"
-                onClick={() => selectProject(index)}
-                className={`h-[74px] w-full overflow-hidden rounded-xl border border-[#E5E5E5] bg-black/[.04] transition ${
-                  isActive
-                    ? 'ring-2 ring-black/70 ring-offset-2 ring-offset-white'
-                    : 'opacity-75 hover:opacity-100'
-                }`}
-                aria-label={`Show ${project.title}`}
-              >
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {designProjects.map((project) => (
+            <article key={project.title} className="flex flex-col rounded-[1.75rem] bg-white p-4 sm:p-5 lg:p-6">
+              <h3 className="flex min-h-[5.25rem] items-start px-1 pt-2 text-2xl font-semibold leading-[1.08] tracking-[-.035em] lg:text-[1.65rem]">
+                {project.title}
+              </h3>
+              <div className="mt-5 overflow-hidden rounded-[1.25rem] bg-black/[.04]">
                 <img
-                  src={project.thumbnail}
-                  alt=""
-                  className="h-full w-full object-cover"
+                  src={project.image}
+                  alt={project.title}
+                  className="aspect-[3/2] w-full object-cover"
                 />
-              </button>
-            )
-          })}
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -1491,9 +1348,9 @@ function DesignProjectsCarousel() {
 
 function About() {
   return (
-    <section id="about" className="border-y border-black/10 bg-[#e8e4dc] py-24 dark:border-white/10 dark:bg-white/[.04] lg:py-36">
+    <section id="about" className="border-y border-black/10 bg-white py-24 dark:border-white/10 dark:bg-white/[.04] lg:py-36">
       <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
-        <div className="grid gap-12 lg:grid-cols-[.14fr_.42fr_1fr] lg:gap-8">
+        <div className="grid gap-12 lg:grid-cols-[.16fr_.24fr_1fr] lg:gap-8">
           <div>
             <p className="whitespace-nowrap text-xs font-bold uppercase tracking-[.18em] text-black/45 dark:text-white/45">
               HOW I WORK
@@ -1501,27 +1358,22 @@ function About() {
           </div>
 
           <div className="lg:col-start-3">
-            <h2 className="text-4xl font-semibold leading-[1.08] tracking-[-.045em] lg:text-7xl">
+            <h2 className="text-4xl font-semibold leading-[1.03] tracking-[-.055em] lg:text-[5.5rem]">
               I turn customer insight into product strategy, clear experiences, and measurable impact.
             </h2>
 
-            <div className="mt-10 grid gap-8 text-lg leading-relaxed text-black/60 dark:text-white/60 md:grid-cols-2">
-              <p>
-                I’ve led a wide range of product, growth, and commerce initiatives—turning complex business challenges into clear customer experiences and measurable outcomes.
-              </p>
-              <p>
-                I partner closely with product, engineering, data, research, marketing, and operations to turn insight into focused decisions, scalable solutions, and high-quality execution.
-              </p>
-            </div>
+            <p className="mt-12 max-w-4xl text-xl leading-relaxed text-black/60 dark:text-white/60 lg:text-2xl">
+              I work closely with product, engineering, data, research, marketing, and operations to turn customer and market insight into focused decisions, scalable experiences, and measurable outcomes.
+            </p>
           </div>
         </div>
 
-        <div className="mt-24 border-t border-black/15 dark:border-white/15">
+        <div className="mt-[4.5rem] border-t border-black/15 dark:border-white/15 lg:mt-[6.5rem]">
           {expertise.map(([n,title,desc]) => (
-            <div key={n} className="group grid gap-4 border-b border-black/15 py-7 dark:border-white/15 lg:grid-cols-[.15fr_.45fr_1fr] lg:items-center lg:py-9">
+            <div key={n} className="group grid gap-4 border-b border-black/15 py-7 last:border-b-0 dark:border-white/15 lg:grid-cols-[.15fr_.45fr_1fr] lg:items-center lg:py-9">
               <span className="font-sans text-xs text-black/35 dark:text-white/35">{n}</span>
               <h3 className="text-2xl font-semibold tracking-[-.03em] lg:text-3xl">{title}</h3>
-              <p className="max-w-2xl text-black/55 transition group-hover:text-black dark:text-white/50 dark:group-hover:text-white">{desc}</p>
+              <p className="w-full text-lg leading-relaxed text-black/55 transition group-hover:text-black dark:text-white/50 dark:group-hover:text-white">{desc}</p>
             </div>
           ))}
         </div>
@@ -1553,7 +1405,7 @@ function Process() {
 function Resume() {
   return (
     <section id="resume" className="bg-white py-24 text-ink dark:bg-[#15181f] dark:text-white lg:py-36">
-      <div className="mx-auto max-w-[1680px] px-5 lg:px-10">
+      <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
         <div className="flex flex-col justify-between gap-8 border-b border-black/15 pb-12 dark:border-white/15 md:flex-row md:items-end">
           <div>
             <p className="mb-5 text-xs font-bold uppercase tracking-[.18em] text-black/45 dark:text-white/45">Experience</p>
@@ -1599,23 +1451,6 @@ function Resume() {
   )
 }
 
-function Testimonials() {
-  return (
-    <section className="bg-sun py-24 text-ink lg:py-32">
-      <div className="mx-auto max-w-[1200px] px-5 text-center lg:px-10">
-        <p className="mb-10 text-xs font-bold uppercase tracking-[.18em]">DESIGN PHILOSOPHY</p>
-        <blockquote className="text-3xl font-semibold leading-[1.15] tracking-[-.04em] lg:text-6xl">
-          "I create clarity for customers, teams, and the business behind the product."
-        </blockquote>
-        <div className="mt-10 text-sm">
-          <b>Sukmoon Chang</b><br/>
-          <span className="text-black/50">Senior Product Designer / Product Design Lead</span>
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function Contact() {
   const [sent, setSent] = useState(false)
 
@@ -1629,7 +1464,7 @@ function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-cobalt py-24 text-white lg:py-36">
+    <section id="contact" className="bg-[#3B392F] py-24 text-white lg:py-36">
       <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
         <div className="grid gap-16 lg:grid-cols-[1.15fr_.85fr]">
           <div>
@@ -1688,7 +1523,7 @@ function Contact() {
 
 function Footer({ navigate }) {
   return (
-    <footer className="bg-ink px-5 py-8 text-white lg:px-10">
+    <footer className="bg-[#3B392F] px-5 py-8 text-white lg:px-10">
       <div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-5 border-t border-white/15 pt-8 text-sm text-white/50 md:flex-row">
         <span>© 2026 Sukmoon Chang</span>
         <span>Product design · Leadership · Marketplace · Loyalty</span>
@@ -1779,11 +1614,10 @@ export default function App() {
       <Nav dark={dark} setDark={setDark} navigate={navigate}/>
       <Hero/>
       <Work navigate={navigate}/>
-      <DesignProjectsCarousel/>
       <About/>
       <Process/>
       <Resume/>
-      <Testimonials/>
+      <VisualDesignWork/>
       <Contact/>
       <Footer navigate={navigate}/>
     </div>
