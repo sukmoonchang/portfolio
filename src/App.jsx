@@ -670,7 +670,7 @@ function LoyaltyHero() {
         <h1 className="mt-16 max-w-[960px] text-[clamp(3.6rem,8.7vw,7.8rem)] font-semibold leading-[.82] tracking-[-.065em]">
           Redesigning<br />Weee!’s Loyalty<br />Ecosystem
         </h1>
-        <p className="mt-8 max-w-2xl text-lg leading-relaxed text-black/55 lg:text-2xl">
+        <p className="mt-8 w-full text-lg leading-relaxed text-black/55 lg:text-2xl">
           A strategic redesign that separated earned rewards from cash value, creating a clearer experience for customers and a more manageable loyalty system for the business.
         </p>
         <div className="mt-10 grid gap-7 border-t border-black/20 pt-7 text-sm sm:grid-cols-2 lg:grid-cols-4">
@@ -1467,7 +1467,7 @@ function DesignProjectsCarousel() {
     <section className="bg-white py-24 text-ink lg:py-32">
       <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
         <p className="mb-10 text-xs font-bold uppercase tracking-[.18em] text-black/45">
-          Earlier brandinng work
+          EARLIER BRANDING WORK
         </p>
 
         <div className="relative mx-auto max-w-[760px]">
