@@ -548,7 +548,6 @@ function CasePage({ item, navigate }) {
 function NewUserHomepageHero() {
   return (
     <section className="relative overflow-hidden bg-[#dceaff] px-5 pb-12 pt-20 text-[#101114] lg:px-10 lg:pb-14 lg:pt-28">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_12%,rgba(255,255,255,.95),transparent_28%),linear-gradient(180deg,rgba(255,255,255,.18),transparent_72%)]" />
       <div className="relative mx-auto max-w-[1038px]">
         <h1 className="max-w-[960px] text-[clamp(3.7rem,9.2vw,8rem)] font-semibold leading-[.84] tracking-[-.067em]">
           First Cart<br />Experience for<br />New Shoppers
