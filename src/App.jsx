@@ -29,12 +29,13 @@ import failedDeliveryKeyExperience from './assets/failed-delivery-key-experience
 import failedDeliveryOutcome from './assets/failed-delivery-recovery-outcome.png'
 import designFlowImage from './assets/failed-delivery-design-flow.png'
 import newUserHomeStoreSelectorImage from './assets/New-user-home-1-store-selector.png'
-import newUserHomeValuePropositionsImage from './assets/New-user-home-value-propositions.png'
+import newUserHomeValuePropositionsImage from './assets/New-user-home-value-propositions-final.png'
 import newUserHomeCartBuilderImage from './assets/New-user-home-cart-builder.png'
 import newUserHomeProductExplorationImage from './assets/New-user-home-product-exploration.png'
 import newUserHomeSocialProofImage from './assets/New-user-home-social-proof.png'
 import newUserHomeRecommendationsImage from './assets/New-user-home-recommendations.png'
 import newUserHomeGuidedDiscoveryImage from './assets/New-user-home-guided-discovery.png'
+import newUserHomeStoreSelectorV02Image from './assets/New-user-home-1-store-selector-final.png'
 
 
 const caseStudies = [
@@ -476,6 +477,8 @@ function CasePage({ item, navigate }) {
     <main className="pt-18">
       {item.id === 'loyalty' ? (
         <LoyaltyHero />
+      ) : item.id === 'new-user-homepage' ? (
+        <NewUserHomepageHero />
       ) : (
       <section className="px-5 py-16 lg:px-10 lg:py-24" style={{backgroundColor:item.color}}>
         <div className="mx-auto max-w-[1200px] text-ink">
@@ -519,7 +522,7 @@ function CasePage({ item, navigate }) {
       {item.id === 'loyalty'
         ? <LoyaltyCaseStudy item={item}/>
         : item.id === 'new-user-homepage'
-          ? <NewUserHomepageCaseStudy item={item}/>
+          ? <NewUserHomepageCaseStudyV02 />
           : smallCaseStudies.some(project => project.id === item.id)
             ? <SmallCaseStudy item={item}/>
             : <DriverCaseStudy item={item}/>}
@@ -539,6 +542,34 @@ function CasePage({ item, navigate }) {
         </button>
       </section>
     </main>
+  )
+}
+
+function NewUserHomepageHero() {
+  return (
+    <section className="relative overflow-hidden bg-[#dceaff] px-5 pb-12 pt-20 text-[#101114] lg:px-10 lg:pb-14 lg:pt-28">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_12%,rgba(255,255,255,.95),transparent_28%),linear-gradient(180deg,rgba(255,255,255,.18),transparent_72%)]" />
+      <div className="relative mx-auto max-w-[1038px]">
+        <h1 className="max-w-[960px] text-[clamp(3.7rem,9.2vw,8rem)] font-semibold leading-[.84] tracking-[-.067em]">
+          First Cart<br />Experience for<br />New Shoppers
+        </h1>
+        <p className="mt-8 max-w-[900px] text-lg leading-relaxed text-black/55 lg:text-2xl">
+          Helping new shoppers find the right store, understand the value of Weee!, and build their first cart.
+        </p>
+        <div className="mt-10 grid gap-7 border-t border-black/20 pt-7 text-sm sm:grid-cols-3 lg:grid-cols-[198px_198px_238px] lg:justify-between">
+          {[
+            ['Role', 'Product Design Lead'],
+            ['Team', 'Product · Engineering · Data · Operations'],
+            ['Scope', 'Homepage · Store Discovery · First Cart · Conversion'],
+          ].map(([label, value]) => (
+            <div key={label}>
+              <p className="text-[10px] font-bold uppercase tracking-[.16em] text-black/40">{label}</p>
+              <p className="mt-2 font-semibold">{value}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }
 
@@ -678,10 +709,10 @@ function LoyaltyEditorialSection({ label, children }) {
   )
 }
 
-function InsightCard({ title, accent = false, arrow = false, children }) {
+function InsightCard({ title, accent = false, blue = false, arrow = false, titleBlue = false, children }) {
   return (
-    <article className={`relative rounded-[1.35rem] p-7 ${accent ? 'bg-[#ff8080] text-white' : 'bg-white text-black'} ${arrow ? 'reframe-arrow' : ''}`}>
-      <h3 className="text-lg font-semibold tracking-[-.03em]">{title}</h3>
+    <article className={`relative rounded-[1.35rem] p-7 ${accent ? `${blue ? 'bg-[#2E66B6]' : 'bg-[#ff8080]'} text-white` : 'bg-white text-black'} ${arrow ? 'reframe-arrow' : ''}`}>
+      <h3 className={`text-lg font-semibold tracking-[-.03em] ${titleBlue ? 'text-[#2E66B6]' : ''}`}>{title}</h3>
       <p className={`mt-3 text-sm leading-relaxed ${accent ? 'text-white/90' : 'text-black/60'}`}>{children}</p>
     </article>
   )
@@ -1157,6 +1188,154 @@ src={
   )
 }
 
+
+function NewUserHomepageCaseStudyV02() {
+  const dataSignals = [
+    ['Brief visits and early exits', 'Many new shoppers briefly explored the default Chinese storefront and then left the site.'],
+    ['Very little store switching', 'Even when another store could better match their needs, most new visitors did not switch.'],
+    ['A weak first-purchase funnel', 'Product clicks, add-to-cart activity, and purchase conversion were low.'],
+  ]
+  const experienceChanges = [
+    ['01', 'Ask users instead of guessing', 'When we did not have enough information to identify a shopper’s needs, we asked them to choose the store most relevant to them. The selector made Weee!’s range of stores visible and gave each shopper a more personalized starting point.', newUserHomeStoreSelectorV02Image],
+    ['02', 'Explain the service and new-shopper benefits early', 'We made Weee!’s marketplace benefits easier to understand before asking visitors to shop—from culturally relevant selection and delivery convenience to trusted service and new-shopper benefits.', newUserHomeValuePropositionsImage],
+    ['03', 'Help shoppers build their first cart', 'We introduced a “Build Your First Cart” module that organized products around useful shopping themes.\nInstead of starting with a large, open-ended catalog, shoppers could use these collections as inspiration and begin adding related products to their carts.', newUserHomeCartBuilderImage],
+  ]
+  const supportingDiscovery = [
+    ['04', 'Build confidence with real customer behavior', 'We used real shopping behavior, including trending products, new-shopper favorites, frequently repurchased items, and customer reviews.', 'These signals helped new shoppers understand which products other customers regularly bought and trusted.', newUserHomeSocialProofImage],
+    ['05', 'Continue discovery from search intent', 'When we had information about a shopper’s search or landing-page intent, we used it to introduce related and similar products.', 'A shopper who arrived looking for one item could discover a broader selection without having to begin a new search.', newUserHomeProductExplorationImage],
+    ['06', 'Turn promotions into shopping ideas', 'Instead of presenting promotions as a flat grid of discounted products, we organized them into clear themes such as weekly picks, local restaurant favorites, bakery items, and special deals.', 'This made promotions easier to understand and gave new shoppers more reasons to continue exploring.', newUserHomeGuidedDiscoveryImage],
+  ]
+
+  return (
+    <div className="bg-[#f3f1eb] text-[#111318] dark:bg-[#f3f1eb] dark:text-[#111318]">
+      <div className="mx-auto max-w-[1038px] px-5 lg:px-10">
+        <LoyaltyEditorialSection label="Overview">
+          <h2 className="loyalty-heading">Creating a homepage designed around the needs of first-time shoppers.</h2>
+          <p className="loyalty-copy mt-7">I led the redesign of Weee!’s new-user homepage. Instead of treating first-time visitors like returning customers, we created an experience that helped them find the right store, understand why Weee! was worth trying, and start building their first cart.</p>
+        </LoyaltyEditorialSection>
+
+        <LoyaltyEditorialSection label="Business Context">
+          <h2 className="loyalty-heading">New shoppers arrived with different needs but saw the same default experience.</h2>
+          <p className="loyalty-copy mt-7">Weee! operates more than 14 culturally specific grocery stores. New shoppers arrived through organic search, SEO pages, referrals, and marketing campaigns, often with little information about their broader shopping needs. When the system could not identify those needs, the homepage defaulted to the Chinese store and expected visitors to already understand where to begin.</p>
+        </LoyaltyEditorialSection>
+
+        <LoyaltyEditorialSection label="Project Goal">
+          <h2 className="loyalty-heading">Help more first-time visitors find relevant products and complete their first purchase.</h2>
+          <p className="loyalty-copy mt-7">Make the first visit easier to understand and create a clearer path from arrival to product discovery, first cart, and purchase.</p>
+        </LoyaltyEditorialSection>
+
+        <LoyaltyEditorialSection label="What the Data Showed">
+          <h2 className="loyalty-heading">Many new visitors left before discovering what Weee! could offer them.</h2>
+          <p className="loyalty-copy mt-7">We worked with our data team to review first-time visitor behavior and found three important patterns.</p>
+          <div className="mt-10 space-y-3">
+            {dataSignals.map(([title, description]) => (
+              <article key={title} className="grid overflow-hidden rounded-[1.2rem] bg-white md:grid-cols-[252px_1fr]">
+                <h3 className="bg-[#2E66B6] p-6 text-lg font-semibold tracking-[-.03em] text-white">{title}</h3>
+                <p className="p-6 text-sm leading-relaxed text-black/60">{description}</p>
+              </article>
+            ))}
+          </div>
+        </LoyaltyEditorialSection>
+
+        <LoyaltyEditorialSection label="Problem Discovery">
+          <h2 className="loyalty-heading">The problem was not a lack of products. New shoppers were not finding the right starting point.</h2>
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            <InsightCard title="Customer problem">New shoppers did not always know whether Weee! was right for them, which store to explore, or where to begin.</InsightCard>
+            <InsightCard title="Business problem">The homepage did not communicate Weee!’s marketplace value or guide new shoppers toward their first purchase.</InsightCard>
+          </div>
+        </LoyaltyEditorialSection>
+
+        <LoyaltyEditorialSection label="How I Reframed the Problem">
+          <h2 className="loyalty-heading">The homepage needed to guide the first shopping experience, not simply display products.</h2>
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            <InsightCard title="Original question" arrow>How might we increase engagement and conversion on the new-user homepage?</InsightCard>
+            <InsightCard title="Reframed question" accent blue>How might we help first-time shoppers find the right store, understand why Weee! is worth trying, and confidently start their first cart?</InsightCard>
+          </div>
+        </LoyaltyEditorialSection>
+
+        <section className="border-b border-black/10 py-20 lg:py-24">
+          <p className="loyalty-kicker">Design Direction</p>
+          <h2 className="loyalty-heading mt-10">Find the right store. Understand the value. Start shopping.</h2>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {[
+              ['Find the right store', 'Make Weee!’s culturally specific stores visible and help shoppers choose a relevant starting point.'],
+              ['Understand the value', 'Clearly explain the service, delivery experience, product selection, and new-shopper benefits.'],
+              ['Start the first cart', 'Give shoppers useful ideas and simple ways to begin adding products.'],
+            ].map(([title, description]) => <InsightCard key={title} title={title} titleBlue>{description}</InsightCard>)}
+          </div>
+        </section>
+
+        <section className="border-b border-black/10 py-20 lg:py-24">
+          <p className="loyalty-kicker">Core Experience</p>
+          <h2 className="loyalty-heading mt-10">Three changes shaped the first visit.</h2>
+          <div className="mt-12 space-y-10">
+            {experienceChanges.map(([number, title, description, image]) => (
+              <article key={number} className="overflow-hidden rounded-[2rem] bg-white px-5 pt-5 lg:px-8 lg:pt-8">
+                <div className="grid gap-4 lg:grid-cols-[38px_1fr]">
+                  <span className="grid h-9 w-9 place-items-center rounded-lg bg-[#F2F0EA] text-sm font-semibold text-[#111318]">{number}</span>
+                  <div>
+                    <h3 className="text-2xl font-semibold tracking-[-.035em]">{title}</h3>
+                    <p className="mt-3 max-w-[850px] whitespace-pre-line text-sm leading-relaxed text-black/60 lg:text-base">{description}</p>
+                    <div className="relative mt-7 overflow-hidden rounded-t-[1.25rem] bg-white">
+                      <img src={image} alt={`${title} interface`} className="block w-full" />
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="border-b border-black/10 py-20 lg:py-24">
+          <p className="loyalty-kicker">Supporting Discovery</p>
+          <h2 className="loyalty-heading mt-10">Additional modules helped shoppers continue exploring.</h2>
+          <div className="mt-12 space-y-6">
+            {supportingDiscovery.map(([number, title, description, outcome, image]) => (
+              <article key={number} className="overflow-hidden rounded-[1.5rem] bg-white p-5 lg:p-8">
+                <div className="grid gap-3 lg:grid-cols-[38px_1fr]">
+                  <span className="grid h-9 w-9 place-items-center rounded-lg bg-[#F2F0EA] text-sm font-semibold text-[#111318]">{number}</span>
+                  <div>
+                    <h3 className="text-xl font-semibold tracking-[-.035em] lg:text-2xl">{title}</h3>
+                    <div className="mt-3 max-w-[850px] space-y-2 text-sm leading-relaxed text-black/60 lg:text-base">
+                      <p>{description}</p>
+                      <p>{outcome}</p>
+                    </div>
+                    <div className="mt-7 overflow-hidden bg-white">
+                      <img src={image} alt={`${title} interface`} className="block w-full" />
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="py-20 lg:py-24">
+          <p className="loyalty-kicker">Strategic Value</p>
+          <h2 className="loyalty-heading mt-10">A clearer path from the first visit to the first cart.</h2>
+          <p className="loyalty-copy mt-7">The redesigned homepage made Weee!’s marketplace easier for new shoppers to understand. It provided a more relevant starting point, explained the value of the service earlier, and gave users practical ways to begin shopping.</p>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {[
+              ['Customer Clarity', 'New shoppers could find the right store, understand Weee!’s value, and know where to begin.'],
+              ['Conversion Path', 'Store discovery, service benefits, and product ideas worked together to guide shoppers toward their first cart.'],
+              ['Growth Flexibility', 'A modular homepage made it easier to test content for different entry paths and shopper needs.'],
+            ].map(([title, description]) => (
+              <article key={title} className="rounded-[1.5rem] bg-white p-7">
+                <h3 className="text-lg font-semibold tracking-[-.03em] text-[#1f59ad]">{title}</h3>
+                <p className="mt-3 text-base leading-[1.35]">{description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-16 rounded-[2rem] bg-[#121317] px-8 py-12 text-white lg:px-16 lg:py-16">
+          <p className="text-[11px] font-bold uppercase tracking-[.22em] text-white/45">What I Learned</p>
+          <h2 className="mt-10 text-[clamp(2.5rem,5vw,4.35rem)] font-semibold leading-[1.08] tracking-[-.045em]">When shopper data was limited, giving users a clear choice created a more relevant experience than making an assumption.</h2>
+        </section>
+      </div>
+    </div>
+  )
+}
 
 function SmallCaseStudy({ item }) {
   if (item.id === 'delivery-fee-updates' || item.id === 'weee-gift-cards' || item.id === 'anniversary-round-up') {
