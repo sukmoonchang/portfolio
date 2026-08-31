@@ -36,6 +36,8 @@ import newUserHomeSocialProofImage from './assets/New-user-home-social-proof.png
 import newUserHomeRecommendationsImage from './assets/New-user-home-recommendations.png'
 import newUserHomeGuidedDiscoveryImage from './assets/New-user-home-guided-discovery.png'
 import newUserHomeStoreSelectorV02Image from './assets/New-user-home-1-store-selector-final.png'
+import newUserDirectPathImage from './assets/new-user-direct-path.png'
+import newUserIndirectPathImage from './assets/new-user-indirect-path.png'
 
 
 const caseStudies = [
@@ -1214,8 +1216,27 @@ function NewUserHomepageCaseStudyV02() {
         </LoyaltyEditorialSection>
 
         <LoyaltyEditorialSection label="Business Context">
-          <h2 className="loyalty-heading">New shoppers arrived with different needs but saw the same default experience.</h2>
-          <p className="loyalty-copy mt-7">Weee! operates more than 14 culturally specific grocery stores. New shoppers arrived through organic search, SEO pages, referrals, and marketing campaigns, often with little information about their broader shopping needs. When the system could not identify those needs, the homepage defaulted to the Chinese store and expected visitors to already understand where to begin.</p>
+          <h2 className="loyalty-heading">Different shoppers arrived with different needs—but the homepage treated them all the same.</h2>
+          <p className="loyalty-copy mt-7">Weee! serves more than 14 culturally specific grocery stores. Yet first-time shoppers entered through search, referrals, campaigns, and SEO landing pages—signals that rarely revealed which store was right for them. When their intent was unclear, the homepage defaulted to the Chinese store, forcing shoppers to orient themselves before they could begin shopping.</p>
+        </LoyaltyEditorialSection>
+
+        <LoyaltyEditorialSection label="Entry Paths">
+          <h2 className="loyalty-heading">How new shoppers reach the homepage</h2>
+          <div className="mt-10 space-y-6">
+            <img
+              src={newUserDirectPathImage}
+              alt="Direct paths to the Weee! homepage through brand search, a typed URL, bookmark, or marketing link"
+              className="w-full"
+            />
+            <img
+              src={newUserIndirectPathImage}
+              alt="Indirect paths to the Weee! homepage through product search, shared links, and campaign landing pages"
+              className="w-full"
+            />
+          </div>
+          <p className="mt-10 max-w-4xl text-xl leading-relaxed text-black/60 lg:text-2xl">
+            New shoppers arriving through these different paths had different needs, but the homepage had little context to identify them.
+          </p>
         </LoyaltyEditorialSection>
 
         <LoyaltyEditorialSection label="Project Goal">
