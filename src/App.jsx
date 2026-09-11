@@ -20,6 +20,7 @@ import expirationAwarenessImage from './assets/Loyalty-key-experience-3.png'
 import expirationRemindersImage from './assets/Loyalty-key-experience-4.png'
 import loyaltyDiscoveryMechanismsImage from './assets/Loyalty-discovery-mechanisms.png'
 import loyaltyNewSystemImage from './assets/Loyalty-new-system.png'
+import loyaltySurveyImage from './assets/loyalty-survey.png'
 import failedDeliveryThumbnail from './assets/failed-delivery-recovery-thumbnail.png'
 import firstTimeUserHomeWalletImage from './assets/first-time-user-home-wallet.png'
 import businessContextImage from './assets/failed-delivery-recovery-business-context.png'
@@ -629,6 +630,19 @@ function LoyaltyCaseStudy({ item }) {
 
         <LoyaltyEditorialSection label="What I Discovered">
           <img src={loyaltyDiscoveryMechanismsImage} alt="A single points balance fed by five different earning mechanisms" className="w-full" />
+        </LoyaltyEditorialSection>
+
+        <LoyaltyEditorialSection label="Survey">
+          <h2 className="max-w-3xl text-[clamp(2.35rem,4.5vw,3.75rem)] font-semibold leading-[1.08] tracking-[-.05em]">High Awareness,<br />Low Understanding<br />of Weee! Points</h2>
+          <p className="loyalty-copy mt-7 max-w-3xl">
+            <strong className="font-semibold text-[#5f5e5a]">Most users knew Weee! Points existed, but many did not understand their value or how to redeem them.</strong><br />
+            We surveyed 54 customers to understand their awareness and use of Weee! Points. Although 83% had heard of the program, 57% did not know what their points were worth, and 72% had never redeemed them.
+          </p>
+          <img
+            src={loyaltySurveyImage}
+            alt="Survey results showing customer awareness and use of Weee! Points"
+            className="mt-12 w-full"
+          />
         </LoyaltyEditorialSection>
 
         <LoyaltyEditorialSection label="Problem">
