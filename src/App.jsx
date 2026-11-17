@@ -636,18 +636,13 @@ function LoyaltyCaseStudy({ item }) {
           <h2 className="max-w-3xl text-[clamp(2.35rem,4.5vw,3.75rem)] font-semibold leading-[1.08] tracking-[-.05em]">High Awareness,<br />Low Understanding<br />of Weee! Points</h2>
           <p className="loyalty-copy mt-7 max-w-3xl">
             <strong className="font-semibold text-[#5f5e5a]">Most users knew Weee! Points existed, but many did not understand their value or how to redeem them.</strong><br />
-            We surveyed 54 customers to understand their awareness and use of Weee! Points. Although 83% had heard of the program, 57% did not know what their points were worth, and 72% had never redeemed them.
+            We surveyed 54 customers to understand their awareness and use of Weee! Points. Although 45 customers (83%) had heard of the program, 31 customers (57%) did not know what their points were worth, and 39 customers (72%) had never redeemed them.
           </p>
           <img
             src={loyaltySurveyImage}
             alt="Survey results showing customer awareness and use of Weee! Points"
             className="mt-12 w-full"
           />
-          <p className="loyalty-copy mt-6 text-[#5f5e5a]">
-            *45 Users (83%) had heard of Weee! Points.<br />
-            *31 Users (57%) did not know how much their points were worth<br />
-            *39 Users (72%) had never used them toward a purchase.
-          </p>
         </LoyaltyEditorialSection>
 
         <LoyaltyEditorialSection label="Problem">
