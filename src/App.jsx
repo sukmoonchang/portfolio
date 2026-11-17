@@ -643,6 +643,11 @@ function LoyaltyCaseStudy({ item }) {
             alt="Survey results showing customer awareness and use of Weee! Points"
             className="mt-12 w-full"
           />
+          <p className="loyalty-copy mt-6 text-[#5f5e5a]">
+            *45 Users (83%) had heard of Weee! Points.<br />
+            *31 Users (57%) did not know how much their points were worth<br />
+            *39 Users (72%) had never used them toward a purchase.
+          </p>
         </LoyaltyEditorialSection>
 
         <LoyaltyEditorialSection label="Problem">
