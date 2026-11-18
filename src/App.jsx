@@ -594,7 +594,7 @@ function LoyaltyHero() {
             ['Role', 'Product Design Lead'],
             ['Team', 'Product · Engineering · Data · Operations'],
             ['Scope', 'Wallet · Rewards · Checkout · Account'],
-            ['Status', 'Design Complete · In Testing'],
+            ['Status', 'Design Complete'],
           ].map(([label, value]) => (
             <div key={label}>
               <p className="text-[10px] font-bold uppercase tracking-[.16em] text-black/40">{label}</p>
@@ -646,9 +646,10 @@ function LoyaltyCaseStudy({ item }) {
         </LoyaltyEditorialSection>
 
         <LoyaltyEditorialSection label="Problem">
-          <div className="grid gap-5 md:grid-cols-2">
-            <InsightCard title="Customer problem">Customers could not understand where their value came from, how it could be used, or when it would expire.</InsightCard>
-            <InsightCard title="Business problem">Different value types required different expiration, accounting, and liability rules but were managed as one balance.</InsightCard>
+          <div className="grid gap-5 md:grid-cols-3">
+            <InsightCard title="Customer problem">Many customers did not know what their points were worth or how to use them.</InsightCard>
+            <InsightCard title="Product problem">Earned rewards and purchased value shared one points balance, even though they needed different rules.</InsightCard>
+            <InsightCard title="Business problem">The business needed to manage unused rewards and liability while protecting the value customers had paid for.</InsightCard>
           </div>
         </LoyaltyEditorialSection>
 
@@ -707,7 +708,8 @@ function LoyaltyCaseStudy({ item }) {
         <section className="mb-16 rounded-[2rem] bg-[#121317] px-8 py-12 text-white lg:px-16 lg:py-16">
           <p className="text-[11px] font-bold uppercase tracking-[.22em] text-white/45">What I Learned</p>
           <h2 className="mt-10 max-w-[1050px] text-[clamp(2.6rem,5vw,4.4rem)] font-semibold leading-[1.08] tracking-[-.045em]">
-            I learned that the most important design decisions can happen before the interface. Separating the two types of value made the system easier for customers to understand and trust.
+            <span className="block">I learned that the most important design decisions can happen before the interface.</span>
+            <span className="mt-6 block">Separating the two types of value made the system easier for customers to understand and trust.</span>
           </h2>
         </section>
       </div>
