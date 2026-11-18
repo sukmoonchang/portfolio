@@ -708,8 +708,8 @@ function LoyaltyCaseStudy({ item }) {
         <section className="mb-16 rounded-[2rem] bg-[#121317] px-8 py-12 text-white lg:px-16 lg:py-16">
           <p className="text-[11px] font-bold uppercase tracking-[.22em] text-white/45">What I Learned</p>
           <h2 className="mt-10 max-w-[1050px] text-[clamp(2.6rem,5vw,4.4rem)] font-semibold leading-[1.08] tracking-[-.045em]">
-            <span className="block">I learned that the most important design decisions can happen before the interface.</span>
-            <span className="mt-6 block">Separating the two types of value made the system easier for customers to understand and trust.</span>
+            <span className="block">The most important design decision is often figuring out what actually needs to change.</span>
+            <span className="mt-6 block">Separating cash from rewards points made the system easier for customers to understand and trust.</span>
           </h2>
         </section>
       </div>
