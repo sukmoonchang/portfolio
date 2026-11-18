@@ -23,11 +23,8 @@ import loyaltyNewSystemImage from './assets/Loyalty-new-system.png'
 import loyaltySurveyImage from './assets/loyalty-survey.png'
 import failedDeliveryThumbnail from './assets/failed-delivery-recovery-thumbnail.png'
 import firstTimeUserHomeWalletImage from './assets/first-time-user-home-wallet.png'
-import businessContextImage from './assets/failed-delivery-recovery-business-context.png'
 import problemStatementImage from './assets/failed-delivery-recovery-problem-statment.png'
-import designPrincipleImage from './assets/failed-delivery-design-principle.png'
 import failedDeliveryKeyExperience from './assets/failed-delivery-key-experience.png'
-import failedDeliveryOutcome from './assets/failed-delivery-recovery-outcome.png'
 import designFlowImage from './assets/failed-delivery-design-flow.png'
 import newUserHomeStoreSelectorImage from './assets/New-user-home-1-store-selector.png'
 import newUserHomeValuePropositionsImage from './assets/New-user-home-value-propositions-final.png'
@@ -491,12 +488,19 @@ function CasePage({ item, navigate }) {
           </div>
 
           <h1 className="display max-w-5xl text-6xl font-semibold lg:text-9xl">
-            {item.title}
+            {item.id === 'driver' ? 'Failed Delivery Recovery' : item.title}
           </h1>
 
-          <p className="mt-8 max-w-2xl text-xl text-black/60 lg:text-2xl">
-            {item.subtitle}
-          </p>
+          {item.id === 'driver' ? (
+            <p className="mt-8 text-xl text-black lg:text-2xl">
+              Helping Weee! drivers resolve delivery issues at the stop.<br />
+              ~1.11% → 0.82% delivery failure rate after the redesign
+            </p>
+          ) : (
+            <p className="mt-8 max-w-2xl text-xl text-black/60 lg:text-2xl">
+              {item.subtitle}
+            </p>
+          )}
 
           <div className="mt-16 grid gap-4 border-t border-black/20 pt-8 md:grid-cols-3">
             <div>
@@ -864,8 +868,10 @@ function DriverCaseStudy({ item }) {
     <div className="mx-auto max-w-[1200px] px-5 py-20 lg:px-10 lg:py-28">
       <CaseSection
         label="Executive Summary"
-        title="Transforming failed delivery reporting into a guided recovery experience."
-        body="As Weee! scaled its last-mile delivery network, failed deliveries became a growing operational challenge. Drivers frequently encountered unavailable customers, incorrect addresses, restricted access, or difficulties locating destinations. I led the redesign of the failed delivery workflow, helping drivers resolve delivery issues before abandoning an order."
+        bodyClassName="mt-6 w-full text-xl leading-relaxed text-black/60 dark:text-white/55 lg:w-[94%]"
+        titleClassName="max-w-4xl text-3xl font-semibold leading-[1.15] tracking-[-.035em] lg:text-6xl"
+        title="A clear next step when a delivery goes wrong"
+        body="I led the redesign of Weee!’s driver app workflow for delivery issues. When drivers tapped Report an issue, the app guided them through what to check and what to try next. If the delivery still failed, the report gave the operations team a clearer record of what happened."
       />
 
       <section className="grid gap-6 border-b border-black/15 py-16 lg:grid-cols-[220px_1fr]">
@@ -877,21 +883,13 @@ function DriverCaseStudy({ item }) {
 
   <div>
     <h2 className="max-w-4xl text-3xl font-semibold leading-[1.15] tracking-[-.035em] lg:text-6xl">
-      Failed deliveries were more than an operations problem.
+      One failed delivery created more work.
     </h2>
 
     <p className="mt-6 max-w-3xl text-xl leading-relaxed text-black/60">
-      Weee!'s delivery ecosystem depends on a seamless connection between
-      customers, operations teams, and delivery drivers. As delivery volume
-      increased, failed deliveries became one of the most expensive operational
-      inefficiencies.
+      A failed delivery could mean another trip, a refund, or a support request. For the customer, it meant waiting longer for their groceries.
     </p>
 
-    <img
-      src={businessContextImage}
-      alt="Failed Delivery Business Context"
-      className="mt-10 w-full rounded-[24px]"
-    />
   </div>
 </section>
 		
@@ -904,17 +902,21 @@ function DriverCaseStudy({ item }) {
 
   <div>
     <h2 className="max-w-4xl text-3xl font-semibold leading-[1.15] tracking-[-.035em] lg:text-6xl">
-      Drivers had no clear recovery process.
+      The building is locked. What should the driver do next?
     </h2>
 
     <p className="mt-6 max-w-3xl text-xl leading-relaxed text-black/60">
-      {item.problem}
+      When drivers arrived at a locked apartment entrance, some called the customer and others went to the leasing office. The app gave them no clear next step. The easiest option was to mark the delivery as failed and move on, so some deliveries that could have been completed were marked as failed.
+    </p>
+
+    <p className="mt-6 max-w-3xl text-xl leading-relaxed text-black/60">
+      The operations team could see that a delivery had failed, but the report rarely explained what happened at the stop. That made it hard to prepare for the same issue on a future delivery.
     </p>
 
     <img
       src={problemStatementImage}
       alt="Failed Delivery Problem Statement"
-      className="mt-10 w-full rounded-[24px]"
+      className="mx-auto mt-10 w-full max-w-[680px]"
     />
   </div>
 </section>
@@ -928,42 +930,31 @@ function DriverCaseStudy({ item }) {
 
   <div>
     <h2 className="max-w-4xl text-3xl font-semibold leading-[1.15] tracking-[-.035em] lg:text-6xl">
-      The issue was not driver behavior. It was the absence of a recovery framework.
+      Reporting a failure was the easiest option.
     </h2>
 
-    <div className="mt-12 rounded-[40px] bg-[#7CA71C] p-10 lg:p-16">
-      <p className="text-xs font-bold uppercase tracking-[.16em] text-white/50">
-        KEY INSIGHT
-      </p>
-
-      <h3 className="mt-8 text-4xl font-semibold leading-[1.08] tracking-[-.015em] text-white lg:text-5xl">
-        Drivers were not intentionally causing delivery failures. They simply lacked confidence and guidance when unexpected situations occurred.
-      </h3>
-    </div>
+    <p className="mt-6 max-w-3xl text-xl leading-relaxed text-black/60">
+      In regular business reviews, I saw that drivers handled similar delivery issues differently. Failure reports often gave the operations team too little detail to understand what happened at the stop.
+    </p>
   </div>
 </section>      
       
 		<section className="grid gap-6 border-b border-black/15 py-16 lg:grid-cols-[220px_1fr]">
   <div>
     <p className="text-xs font-bold uppercase tracking-[.16em] text-black/40">
-      DESIGN PRINCIPLES
+      DESIGN PRINCIPLE
     </p>
   </div>
 
   <div>
     <h2 className="max-w-4xl text-3xl font-semibold leading-[1.15] tracking-[-.035em] lg:text-6xl">
-      Guide drivers toward recovery before escalation.
+      Show drivers what to try before they report a failed delivery.
     </h2>
 
     <p className="mt-6 max-w-3xl text-xl leading-relaxed text-black/60">
-      {item.strategy}
+      When a driver taps Report an issue, the app guides them through what to check and what to try next. If they still can’t complete the delivery, the report captures the issue and a photo so the operations team can see what happened.
     </p>
 
-    <img
-      src={designPrincipleImage}
-      alt="Failed Delivery Design Principles"
-      className="mt-10 w-full rounded-[24px]"
-    />
   </div>
 </section>
 		
@@ -973,7 +964,7 @@ function DriverCaseStudy({ item }) {
        <h2 className="text-4xl font-semibold leading-[1.1] tracking-[-.045em] lg:text-6xl">
           A guided failed delivery recovery flow.
         </h2>
-        <p className="mt-6 max-w-4xl text-xl leading-relaxed text-black/60">
+        <p className="mt-6 w-full text-xl leading-relaxed text-black/60">
   I redesigned the experience around a structured recovery journey that
   verifies the package, identifies the issue, confirms location, guides
   customer contact, recommends next steps, and requires evidence before
@@ -1004,25 +995,17 @@ function DriverCaseStudy({ item }) {
 
   
   <h2 className="text-4xl font-semibold leading-[1.1] tracking-[-.045em] lg:text-6xl">
-    Measurable impact across drivers, customers, and operations.
+    Fewer failed deliveries. Clearer data on why they failed.
   </h2>
 
-  <p className="mt-6 max-w-4xl text-xl leading-relaxed text-black/60">
-    The guided recovery workflow improved consistency, reduced avoidable failed
-    deliveries, and created greater visibility into delivery exceptions across
-    the network.
+  <p className="mt-6 text-xl leading-relaxed text-black/60">
+    After the redesign, the delivery failure rate fell by about 26%. When a delivery still failed, the report captured the issue type and a photo, giving the operations team more detail on what went wrong and helping them prepare for future deliveries.
   </p>
 
-  <div className="mt-12 overflow-hidden rounded-[2rem]">
-    <img
-      src={failedDeliveryOutcome}
-      alt="Failed Delivery Recovery Outcome"
-      className="w-full"
-    />
-  </div>
+  <p className="mt-12 text-4xl font-semibold leading-[1.1] tracking-[-.045em] lg:text-6xl">~1.11% → 0.82%</p>
 </section>
 
-      <Learning text={item.learning}/>
+      <Learning text="The best time to help drivers is when they can still complete the delivery."/>
     </div>
   )
 }
@@ -1449,15 +1432,15 @@ function CaseIntro() {
   )
 }
 
-function CaseSection({ label, title, body }) {
+function CaseSection({ label, title, body, titleClassName, bodyClassName }) {
   return (
     <section className="grid gap-6 border-b border-black/15 py-16 dark:border-white/15 lg:grid-cols-[220px_1fr]">
       <div>
         <p className="text-xs font-bold uppercase tracking-[.16em] text-black/40 dark:text-white/40">{label}</p>
       </div>
       <div>
-        <h2 className="max-w-3xl text-3xl font-semibold leading-[1.15] tracking-[-.035em] lg:text-5xl">{title}</h2>
-        <p className="mt-6 max-w-2xl text-xl leading-relaxed text-black/60 dark:text-white/55">{body}</p>
+        <h2 className={titleClassName || "max-w-3xl text-3xl font-semibold leading-[1.15] tracking-[-.035em] lg:text-5xl"}>{title}</h2>
+        <p className={bodyClassName || "mt-6 max-w-2xl text-xl leading-relaxed text-black/60 dark:text-white/55"}>{body}</p>
       </div>
     </section>
   )
