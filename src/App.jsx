@@ -916,7 +916,7 @@ function DriverCaseStudy({ item }) {
     <img
       src={problemStatementImage}
       alt="Failed Delivery Problem Statement"
-      className="mx-auto mt-10 w-full max-w-[680px]"
+      className="mx-auto mt-10 w-3/4 max-w-[510px]"
     />
   </div>
 </section>
